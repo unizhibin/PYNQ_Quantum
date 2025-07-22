@@ -1,5 +1,5 @@
 # Quantum Sensing
-## PYNQ-based Portable Nuclear Magnetic Resonance Spectrometer Powered by Deep Learning from AMD Xilinx
+## Quantum Experimental System Based on the PYNQ Platform
 
 ### Youtube Video
 
