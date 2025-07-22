@@ -7,17 +7,17 @@ https://youtu.be/D55JbZ45ar8
 
 ### Project Structure
 
-PYNQ-Spectroscopy
+#### PYNQ-Spectroscopy
 
-PYNQ-Relaxometry
+#### PYNQ-Relaxometry
 
-PYNQ-Magnet_Shimming
+#### PYNQ-Magnet_Shimming
 
-PYNQ-MRI
+#### PYNQ-MRI
 
-PYNQ-NMR_PhasedArray
+#### PYNQ-NMR_PhasedArray
 
-PYNQ-Multi_Channel
+#### PYNQ-Multi_Channel
 
 ### Project Description 
 
