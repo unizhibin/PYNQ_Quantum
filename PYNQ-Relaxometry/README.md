@@ -2,11 +2,11 @@
 
 ## File Structure
 
-### Doc: documentation
+#### Doc: Documentation
 
-### Board: PYNQ-Z2, PYNQ-ZU, ZCU104 (including .bit .hwh .tcl File )
+#### Board: PYNQ-Z2, PYNQ-ZU, ZCU104 (including .bit .hwh .tcl File )
 
-### Jupyter notebook 
+#### Jupyter notebook 
 
 
 ## Project Description 
