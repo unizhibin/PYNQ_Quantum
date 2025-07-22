@@ -5,8 +5,21 @@
 
 https://youtu.be/D55JbZ45ar8
 
-### Project Description 
+### Project Structure
 
+PYNQ-Spectroscopy
+
+PYNQ-Relaxometry
+
+PYNQ-Magnet_Shimming
+
+PYNQ-MRI
+
+PYNQ-NMR_PhasedArray
+
+PYNQ-Multi_Channel
+
+### Project Description 
 
 This is a quantum experimentation project based on FPGA and the PYNQ platform. It encompasses hardware circuit design, a graphical user interface (GUI), and several corresponding experiments. In the early stages of development, we employed a range of development platforms—including PYNQ-Z2, ZCU104, ZCU111, and the Kria K26 SoM—to accommodate various application environments. The system is continuously updated on a regular basis.
 
