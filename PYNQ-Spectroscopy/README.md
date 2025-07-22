@@ -1,20 +1,13 @@
-# Quantum Experimental System Based on the PYNQ Platform
+# PYNQ-Spectroscopy
 
-## Project Structure
+## File Structure
 
-### PYNQ-Spectroscopy
+#### Doc: Documentation
 
-### PYNQ-Relaxometry
+#### Board: PYNQ-Z2, PYNQ-ZU, ZCU104 (including .bit .hwh .tcl File )
 
-### PYNQ-Magnet_Shimming
+#### Jupyter notebook 
 
-### PYNQ-MRI
-
-### PYNQ-NMR_PhasedArray
-
-### PYNQ-Multi_Channel
-
-### PYNQ-ODMR
 
 ## Project Description 
 
