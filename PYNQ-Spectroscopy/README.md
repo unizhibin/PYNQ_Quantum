@@ -14,6 +14,3 @@
 
 ![Chemical Shift Ethanol](docs/Chemical%20shift%20ethanol.png)
 
-### Youtube Video
-
-https://youtu.be/D55JbZ45ar8
