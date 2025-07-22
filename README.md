@@ -1,10 +1,6 @@
 # Quantum Sensing
 ## Quantum Experimental System Based on the PYNQ Platform
 
-### Youtube Video
-
-https://youtu.be/D55JbZ45ar8
-
 ### Project Structure
 
 ## PYNQ-Spectroscopy
@@ -84,3 +80,7 @@ For collaboration inquiries (regarding the chip or system), please contact Prof.
     <img src="https://github.com/unizhibin/Xilinx_Open_Hardware_2023/blob/main/Documentation/PYNQ%20ZU%20System.jpg" width="400" alt="Image 2" style="float: left;">
 </div align=center>
 <p align="center">pNMR system pictures based on PYNQ-Z2(left) and PYNQ-ZU(right)</p>
+
+### Youtube Video
+
+https://youtu.be/D55JbZ45ar8
