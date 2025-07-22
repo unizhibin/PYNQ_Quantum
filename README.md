@@ -14,6 +14,8 @@
 
 ### PYNQ-Multi_Channel
 
+### PYNQ-ODMR
+
 ## Project Description 
 
 This is a quantum experimentation project based on PYNQ (ZYNQ FPGA from AMD Xilinx) platform. It encompasses hardware circuit design, a graphical user interface (GUI), and several corresponding experiments. In the early stages of development, we employed a range of development platforms—including PYNQ-Z2, ZCU104, ZCU111, and the Kria K26 Som—to accommodate various application environments. The system is continuously updated on a regular basis.
