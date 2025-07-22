@@ -12,8 +12,7 @@
 ## Project Description 
 
 
-![Chemical Shift Ethanol](docs/ethanol_preview.png)
-
+![Chemical Shift Ethanol](docs/Chemical%20shift%20ethanol.png)
 
 ### Youtube Video
 
