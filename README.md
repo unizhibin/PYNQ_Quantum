@@ -22,7 +22,7 @@ This is a quantum experimentation project based on PYNQ (ZYNQ FPGA from AMD Xili
 
 Most of the setups in this project utilize ASICs developed by our team. However, we also provide alternative implementations that do not require ASICs.
 
-If you require technical support, please feel free to contact me at [zhibin.zhao@iis.uni-stuttgart.de](mailto:zhibin.zhao@iis.uni-stuttgart.de), or my (former) students [yitian.chen@iis.uni-stuttgart.de](mailto:yitian.chen@iis.uni-stuttgart.de) and [yichao.peng@iis.uni-stuttgart.de](mailto:yichao.peng@iis.uni-stuttgart.de).
+If you require technical support, please feel free to contact me at [zhibin.zhao@iis.uni-stuttgart.de](mailto:zhibin.zhao@iis.uni-stuttgart.de), or my (former and always be) humble students [yitian.chen@iis.uni-stuttgart.de](mailto:yitian.chen@iis.uni-stuttgart.de) and [yichao.peng@iis.uni-stuttgart.de](mailto:yichao.peng@iis.uni-stuttgart.de).
 
 For collaboration inquiries (regarding the chip or system), please contact Prof. Jens Anders at [jens.anders@iis.uni-stuttgart.de](mailto:jens.anders@iis.uni-stuttgart.de).
 
