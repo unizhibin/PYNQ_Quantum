@@ -12,5 +12,5 @@
 ## Project Description 
 
 
-![Chemical Shift Ethanol](docs/PYNQ_relaxation.png)
+![relaxation](docs/PYNQ_Relaxation.jpg)
 
