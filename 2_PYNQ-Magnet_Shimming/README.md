@@ -12,6 +12,6 @@
 ## Project Description 
 
 
-![shimming](docs/PYNQ_hardware.jpg)
-![shimming](docs/PYNQ_result.jpg)
+![shimming](docs/shimming_hardware.jpg)
+![shimming](docs/shimming_result.jpg)
 
