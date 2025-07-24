@@ -1,4 +1,4 @@
-# Quantum Experimental System Based on the PYNQ Platform
+# Portable Quantum Experimental System Based on the PYNQ Platform
 
 ## Project Structure
 
