@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "<Project Title>"
+authors:
+  - family-names: "Zhao"
+    given-names: "Zhibin"
+    orcid: "0000-0000-0000-0000"
+version: "0.1.0"
+date-released: "2025-08-13"
+doi: ""
+repository-code: "https://github.com/<owner>/<repo>"
+preferred-citation:
+  type: article
+  title: "<Your Paper Title>"
+  authors:
+    - family-names: "Zhao"
+      given-names: "Zhibin"
+  journal: "<Journal>"
+  year: 2025
