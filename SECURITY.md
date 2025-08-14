@@ -1,6 +1,6 @@
 # Security Policy
 
-If you discover a security issue, please email <security@example.com> with details.
+If you discover a security issue, please email <zhibin.zhao@iis.uni-stuttgart.de> with details.
 We aim to respond within 72 hours and will coordinate a responsible disclosure timeline.
 
 ## Supported Versions
