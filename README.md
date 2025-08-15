@@ -6,13 +6,15 @@
 
 ##### PYNQ-Relaxometry
 
-##### PYNQ-Magnet_Shimming
+##### PYNQ-Magnet shimming
 
 ##### PYNQ-MRI
 
-##### PYNQ-NMR_PhasedArray
+##### PYNQ-Mobile NMR Phased Array
 
-##### PYNQ-Multi_Channel
+##### PYNQ-Multi Channel
+
+##### PYNQ-VCO NMR
 
 ##### PYNQ-ODMR
 
