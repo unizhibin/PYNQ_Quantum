@@ -1,3 +1,5 @@
+## History
+
 ## MRI Demo Images (Proof-of-Function)
 
 These images are **engineering demos** produced with the PYNQ-MRI platform to verify end-to-end functionality (pulse generation → gradient control → acquisition → reconstruction). They are **not** intended to claim high-resolution spectroscopic performance. Use them as a visual sanity check that the system, gradients, and reconstruction pipeline are wired correctly.
@@ -7,14 +9,14 @@ These images are **engineering demos** produced with the PYNQ-MRI platform to ve
 ### Gallery
 <table>
   <tr>
-    <td><img src="./figures/1.png" width="220" height="220" alt="1" /></td>
-    <td><img src="./figures/2.png" width="220" height="220" alt="2" /></td>
-    <td><img src="./figures/3.png" width="220" height="220" alt="3" /></td>
+    <td><img src="./figures/Gallery/1.png" width="220" height="220" alt="1" /></td>
+    <td><img src="./figures/Gallery/2.png" width="220" height="220" alt="2" /></td>
+    <td><img src="./figures/Gallery/3.png" width="220" height="220" alt="3" /></td>
   </tr>
   <tr>
-    <td><img src="./figures/4.png" width="220" height="220" alt="4" /></td>
-    <td><img src="./figures/5.png" width="220" height="220" alt="5" /></td>
-    <td><img src="./figures/6.png" width="220" height="220" alt="6" /></td>
+    <td><img src="./figures/Gallery/4.png" width="220" height="220" alt="4" /></td>
+    <td><img src="./figures/Gallery/5.png" width="220" height="220" alt="5" /></td>
+    <td><img src="./figures/Gallery/6.png" width="220" height="220" alt="6" /></td>
   </tr>
 </table>
 
