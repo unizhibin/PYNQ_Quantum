@@ -20,6 +20,19 @@ These images are **engineering demos** produced with the PYNQ-MRI platform to ve
   </tr>
 </table>
 
+### Physical Photos (real objects & scale)
+
+<table>
+  <tr>
+    <td><img src="./figures/r4.jpg" height="220" alt="r4: lettering phantom + 2-cent coin" /></td>
+    <td><img src="./figures/r5.jpg" height="220" alt="r5: hole/star phantom + 2-cent coin" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>r4 — photo with 2-euro-cent (⌀ 18.75 mm) for scale</sub></td>
+    <td align="center"><sub>r5 — photo with 2-euro-cent (⌀ 18.75 mm) for scale</sub></td>
+  </tr>
+</table>
+
 ### Acquisition (summary)
 
 - Field & nucleus: low-field **¹H**; typical Larmor ≈ 15 MHz (exact values per image in the table below)
