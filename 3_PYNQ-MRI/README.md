@@ -5,14 +5,18 @@ These images are **engineering demos** produced with the PYNQ-MRI platform to ve
 > Safety note (permanent magnets): keep ferromagnetic tools and loose metal away from the magnet gap; do not let objects snap into the poles.
 
 ### Gallery
-<p float="left">
-  <img src="./figures/1.png" width="180" alt="Phantom with circular features" />
-  <img src="./figures/2.png" width="180" alt="Rectangular phantom with hole" />
-  <img src="./figures/3.png" width="180" alt="3×3 hole array phantom" />
-  <img src="./figures/4.png" width="180" alt="Lettering phantom (view A)" />
-  <img src="./figures/5.png" width="180" alt="Dot/letter mixed phantom" />
-  <img src="./figures/6.png" width="180" alt="Lettering phantom (view B)" />
-</p>
+<table>
+  <tr>
+    <td><img src="./figures/1.png" width="220" height="220" alt="1" /></td>
+    <td><img src="./figures/2.png" width="220" height="220" alt="2" /></td>
+    <td><img src="./figures/3.png" width="220" height="220" alt="3" /></td>
+  </tr>
+  <tr>
+    <td><img src="./figures/4.png" width="220" height="220" alt="4" /></td>
+    <td><img src="./figures/5.png" width="220" height="220" alt="5" /></td>
+    <td><img src="./figures/6.png" width="220" height="220" alt="6" /></td>
+  </tr>
+</table>
 
 ### Acquisition (summary)
 
