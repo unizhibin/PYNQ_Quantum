@@ -24,11 +24,11 @@ These images are **engineering demos** produced with the PYNQ-MRI platform to ve
 
 <table>
   <tr>
-    <td><img src="./figures/Gallery/r4.jpg" height="220" alt="r4: lettering phantom + 2-cent coin" /></td>
+    <td><img src="./figures/Gallery/r4.jpg" height="220" alt="r4: lettering phantom + 1-cent coin" /></td>
     <td><img src="./figures/Gallery/r5.jpg" height="220" alt="r5: hole/star phantom + 2-cent coin" /></td>
   </tr>
   <tr>
-    <td align="center"><sub>r4 — photo with 2-euro-cent (⌀ 18.75 mm) for scale</sub></td>
+    <td align="center"><sub>r4 — photo with 1-euro-cent (⌀ 16.25 mm) for scale</sub></td>
     <td align="center"><sub>r5 — photo with 2-euro-cent (⌀ 18.75 mm) for scale</sub></td>
   </tr>
 </table>
