@@ -6,14 +6,13 @@ These images are **engineering demos** produced with the PYNQ-MRI platform to ve
 
 ### Gallery
 <p float="left">
-  <img src="../figures/1.png" width="180" alt="Phantom with circular features" />
-  <img src="../figures/2.png" width="180" alt="Rectangular phantom with hole" />
-  <img src="../figures/3.png" width="180" alt="3×3 hole array phantom" />
-  <img src="../figures/4.png" width="180" alt="Lettering phantom (view A)" />
-  <img src="../figures/5.png" width="180" alt="Dot/letter mixed phantom" />
-  <img src="../figures/6.png" width="180" alt="Lettering phantom (view B)" />
+  <img src="./figures/1.png" width="180" alt="Phantom with circular features" />
+  <img src="./figures/2.png" width="180" alt="Rectangular phantom with hole" />
+  <img src="./figures/3.png" width="180" alt="3×3 hole array phantom" />
+  <img src="./figures/4.png" width="180" alt="Lettering phantom (view A)" />
+  <img src="./figures/5.png" width="180" alt="Dot/letter mixed phantom" />
+  <img src="./figures/6.png" width="180" alt="Lettering phantom (view B)" />
 </p>
-
 
 ### Acquisition (summary)
 
