@@ -1,31 +1,61 @@
-# Quantum Experimental System Based on the PYNQ Platform
+## MRI Demo Images (Proof-of-Function)
 
-## Project Structure
+These images are **engineering demos** produced with the PYNQ-MRI platform to verify end-to-end functionality (pulse generation → gradient control → acquisition → reconstruction). They are **not** intended to claim high-resolution spectroscopic performance. Use them as a visual sanity check that the system, gradients, and reconstruction pipeline are wired correctly.
 
-### PYNQ-Spectroscopy
+> Safety note (permanent magnets): keep ferromagnetic tools and loose metal away from the magnet gap; do not let objects snap into the poles.
 
-### PYNQ-Relaxometry
+### Gallery
 
-### PYNQ-Magnet_Shimming
+<p float="left">
+  <img src="figures/mri_gallery/1.png" width="180" alt="Phantom with circular features" />
+  <img src="figures/mri_gallery/2.png" width="180" alt="Rectangular phantom with hole" />
+  <img src="figures/mri_gallery/3.png" width="180" alt="3×3 hole array phantom" />
+  <img src="figures/mri_gallery/4.png" width="180" alt="Lettering phantom (view A)" />
+  <img src="figures/mri_gallery/5.png" width="180" alt="Dot/letter mixed phantom" />
+  <img src="figures/mri_gallery/6.png" width="180" alt="Lettering phantom (view B)" />
+</p>
 
-### PYNQ-MRI
+### Acquisition (summary)
 
-### PYNQ-NMR_PhasedArray
+- Field & nucleus: low-field **¹H**; typical Larmor ≈ 15 MHz (exact values per image in the table below)
+- Sequence: 2D Cartesian (spin-echo or gradient-echo as noted per image)
+- Readout: standard Cartesian k-space, rectangular FOV, no partial Fourier
+- Reconstruction: Hann window → optional zero-filling → 2D IFFT → magnitude → min-max normalization
+- Purpose: exercise TX/RX chain, gradient linearity, and basic image formation under lab conditions
 
-### PYNQ-Multi_Channel
+### Per-image metadata
 
-### PYNQ-ODMR
+Fill this table so users understand what each figure shows and can reproduce it.
 
-## Project Description 
+| ID | File | Phantom / Content | Sequence | Matrix × FOV | Voxel (mm) | TE / TR (ms) | Averages | RX BW (kHz) | Notes |
+|---:|------|-------------------|----------|--------------|------------|--------------|---------:|-------------:|------|
+| 1 | `figures/mri_gallery/1.png` | Circular features | SE | `Nx×Ny` @ `Wx×Wy` mm | `Δx×Δy` | `TE` / `TR` | `NEX` | `BW` | e.g., slight ghosting along phase-encode |
+| 2 | `figures/mri_gallery/2.png` | Rectangular plate w/ hole | GRE | … | … | … | … | … | … |
+| 3 | `figures/mri_gallery/3.png` | 3×3 hole array | SE | … | … | … | … | … | checks resolution/MTF |
+| 4 | `figures/mri_gallery/4.png` | Lettering (“IIS/IPS”) | GRE | … | … | … | … | … | orientation A |
+| 5 | `figures/mri_gallery/5.png` | Dots + letters | SE | … | … | … | … | … | … |
+| 6 | `figures/mri_gallery/6.png` | Lettering (“IIS/IPS”) | GRE | … | … | … | … | … | orientation B |
 
-This is a quantum experimentation project based on PYNQ (ZYNQ FPGA from AMD Xilinx) platform. It encompasses hardware circuit design, a graphical user interface (GUI), and several corresponding experiments. In the early stages of development, we employed a range of development platforms—including PYNQ-Z2, ZCU104, ZCU111, and the Kria K26 Som—to accommodate various application environments. The system is continuously updated on a regular basis.
+### File naming & sidecar metadata (recommended)
 
-Most of the setups in this project utilize ASICs developed by our team. However, we also provide alternative implementations that do not require ASICs.
-
-If you require technical support, please feel free to contact me at [zhibin.zhao@iis.uni-stuttgart.de](mailto:zhibin.zhao@iis.uni-stuttgart.de), or my (former) students [yitian.chen@iis.uni-stuttgart.de](mailto:yitian.chen@iis.uni-stuttgart.de) and [yichao.peng@iis.uni-stuttgart.de](mailto:yichao.peng@iis.uni-stuttgart.de).
-
-For collaboration inquiries (regarding the chip or system), please contact Prof. Jens Anders at [jens.anders@iis.uni-stuttgart.de](mailto:jens.anders@iis.uni-stuttgart.de).
-
-### Youtube Video
-
-https://youtu.be/D55JbZ45ar8
+- **Filename pattern** (example):  
+  `2025-11-03_phantom-IIS_seq-GRE_mat-128x128_fov-40x40mm_TE-6ms_TR-200ms_avg-4_bw-100kHz.png`
+- Optional **JSON sidecar** for each image:
+  ```json
+  {
+    "nucleus": "1H",
+    "B0_T": 0.359,
+    "larmor_Hz": 15280000,
+    "sequence": "GRE",
+    "matrix": [128, 128],
+    "fov_mm": [40, 40],
+    "voxel_mm": [0.3125, 0.3125],
+    "TE_ms": 6,
+    "TR_ms": 200,
+    "averages": 4,
+    "rx_bandwidth_kHz": 100,
+    "window": "Hann",
+    "zerofill": [256, 256],
+    "recon_commit": "<git-short-sha>",
+    "notes": "Orientation A; mild ringing on readout"
+  }
