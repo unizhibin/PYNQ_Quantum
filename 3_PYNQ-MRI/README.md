@@ -1,5 +1,8 @@
 ## History（A dream woven from DuPont jumper wires）
 ![history-full](./figures/Gallery/history.jpg)
+This all began in 2018, when FPGA was just a small hobby. Before I started my PhD, I’m grateful to my parents for supporting that hobby—they bought me around €3,000 worth of development boards. After I started the PhD, FPGA was still only a side tool while I focused on designing the main project: a zero-dead-time chip.
+
+To avoid the high NI license costs, I decided to use my hobby to solve some real problems. I chose a platform that’s even more open than Red Pitaya (and, frankly, because my parents had already bought ZCU102, PYNQ-Z1boards). Later, I also want to thank Prof. Dr. Jens Anders for his support. On this platform, Honghao Gu, Yichao Peng, and Yitian Chen completed their master’s theses. Yichao and Yitian have now begun their PhD journeys. I wish them success.
 
 ## MRI Demo Images (Proof-of-Function)
 
