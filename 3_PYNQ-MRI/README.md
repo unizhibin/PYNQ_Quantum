@@ -1,4 +1,7 @@
-## History
+## History（A dream woven from DuPont jumper wires）
+<p align="center">
+  <img src="./figures/history/1.png" width="220" height="220" alt="history.png" />
+</p>
 
 ## MRI Demo Images (Proof-of-Function)
 
@@ -17,6 +20,19 @@ These images are **engineering demos** produced with the PYNQ-MRI platform to ve
     <td><img src="./figures/Gallery/4.png" width="220" height="220" alt="4" /></td>
     <td><img src="./figures/Gallery/5.png" width="220" height="220" alt="5" /></td>
     <td><img src="./figures/Gallery/6.png" width="220" height="220" alt="6" /></td>
+  </tr>
+</table>
+
+### Physical Photos (real objects & scale)
+
+<table>
+  <tr>
+    <td><img src="./figures/Gallery/r4.jpg" height="220" alt="PLA 3D-printed phantom carrying raised I2S lettering: lettering phantom + 1-cent coin" /></td>
+    <td><img src="./figures/Gallery/r5.jpg" height="220" alt="BMF 3D-printed Test sample: hole/star phantom + 2-cent coin" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>PLA 3D-printed phantom carrying raised I2S lettering — photo with 1-euro-cent (⌀ 16.25 mm) for scale</sub></td>
+    <td align="center"><sub>BMF 3D-printed Test sample — photo with 2-euro-cent (⌀ 18.75 mm) for scale</sub></td>
   </tr>
 </table>
 
