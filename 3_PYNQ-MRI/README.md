@@ -1,7 +1,5 @@
 ## History（A dream woven from DuPont jumper wires）
-<p align="center">
-  <img src="./figures/Gallery/history.jpg" width="220" height="220" alt="history" />
-</p>
+[![history](./figures/Gallery/history.jpg)](./history.md)
 
 ## MRI Demo Images (Proof-of-Function)
 
