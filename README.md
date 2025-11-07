@@ -31,3 +31,5 @@ For collaboration inquiries (regarding the chip or system), please contact Prof.
 ### Youtube Video
 
 https://youtu.be/D55JbZ45ar8
+
+![history-full](./Gallery/pynq_Hardware_Family.jpg)
