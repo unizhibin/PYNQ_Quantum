@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER fpga_ADC_AD7960
+	OPTION supported_peripherals = (fpga_ADC_AD7960);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = fpga_ADC_AD7960;
+END DRIVER

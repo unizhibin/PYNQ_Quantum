@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>fpga_magnet_controller</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="S00_AXI"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>WIZ_DATA_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>WIZ_NUM_REG</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_NUM_REG" spirit:minimum="4" spirit:maximum="512" spirit:rangeType="long">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.SUPPORTS_NARROW_BURST" spirit:choiceRef="choice_pairs_ce1226b1">0</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_BUSIF">S00_AXI</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_RESET">s00_axi_aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>S00_AXI_reg</spirit:name>
+        <spirit:baseAddress spirit:format="long" spirit:resolve="user">0</spirit:baseAddress>
+        <spirit:range spirit:format="long">4096</spirit:range>
+        <spirit:width spirit:format="long">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>OFFSET_BASE_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_BASE_PARAM">C_S00_AXI_BASEADDR</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>OFFSET_HIGH_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_HIGH_PARAM">C_S00_AXI_HIGHADDR</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesis</spirit:name>
+        <spirit:displayName>VHDL Synthesis</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>fpga_magnet_controller_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>6b36b9f8</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlbehavioralsimulation</spirit:name>
+        <spirit:displayName>VHDL Simulation</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>fpga_magnet_controller_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>6b36b9f8</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_softwaredriver</spirit:name>
+        <spirit:displayName>Software Driver</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:sw.driver</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>b114b9c6</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>2b311e1c</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>16328387</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>2a4537a3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>o_sdi</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_sclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_cs</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_ldac</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">6</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">6</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI data bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:order="3" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI address bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">7</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_CLK_FREQENCY</spirit:name>
+        <spirit:displayName>C Clk Freqency</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLK_FREQENCY">100000000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_SCLK_FREQUENCY</spirit:name>
+        <spirit:displayName>C Sclk Frequency</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SCLK_FREQUENCY">20000000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_NUMBER_SCLK</spirit:name>
+        <spirit:displayName>C Number Sclk</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUMBER_SCLK">24</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C Data Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DATA_WIDTH">24</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_6fc15197</spirit:name>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_ce1226b1</spirit:name>
+      <spirit:enumeration spirit:text="true">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="false">0</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/fpga_DAC_AD9881.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_magnet_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_magnet_controller_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pid_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_magnet_controller_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_65eb28f4</spirit:userFileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/fpga_DAC_AD9881.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_magnet_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_magnet_controller_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pid_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_magnet_controller_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>drivers/fpga_magnet_controller_v1_0/data/fpga_magnet_controller.mdd</spirit:name>
+        <spirit:userFileType>mdd</spirit:userFileType>
+        <spirit:userFileType>driver_mdd</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_magnet_controller_v1_0/data/fpga_magnet_controller.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>driver_tcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_magnet_controller_v1_0/src/Makefile</spirit:name>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_magnet_controller_v1_0/src/fpga_magnet_controller.h</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_magnet_controller_v1_0/src/fpga_magnet_controller.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_magnet_controller_v1_0/src/fpga_magnet_controller_selftest.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/fpga_magnet_controller_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_2b311e1c</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/tb_fpga_pid_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>My new AXI IP</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI data bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197" spirit:order="3">32</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_DATA_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI address bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">7</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_ADDR_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_BASEADDR</spirit:name>
+      <spirit:displayName>C S00 AXI BASEADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_BASEADDR" spirit:order="5" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_BASEADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_HIGHADDR</spirit:name>
+      <spirit:displayName>C S00 AXI HIGHADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_HIGHADDR" spirit:order="6" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_HIGHADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">fpga_magnet_controller_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_CLK_FREQENCY</spirit:name>
+      <spirit:displayName>C Clk Freqency</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_CLK_FREQENCY">100000000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_SCLK_FREQUENCY</spirit:name>
+      <spirit:displayName>C Sclk Frequency</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SCLK_FREQUENCY">20000000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_NUMBER_SCLK</spirit:name>
+      <spirit:displayName>C Number Sclk</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUMBER_SCLK">24</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C Data Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DATA_WIDTH">24</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">versal</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplus58g</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">akintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">azynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>fpga_magnet_controller_v1.0</xilinx:displayName>
+      <xilinx:coreRevision>12</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2023-03-17T16:46:24Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c07e76e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f6a031e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e101e2d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58a427be_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d22baf3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6932833_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@433ae9e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38e993c4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b1da35a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5beeb84_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1da6d8d6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ea53da0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@701470b6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1537de21_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71ffa706_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73d392bc_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@286c8bba_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f7a9079_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1776651f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4036d38c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44339541_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4225261e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33874d27_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c5299dd_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51524075_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f4f9951_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@619e3749_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d91f134_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@547583e4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b5e2877_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b6bfebf_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e158906_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@98fdfc4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51f77fde_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78d46a86_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fb61b6d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e387170_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46fdc259_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f615e4f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@625e56bb_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4df74232_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e8cf68d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bff3855_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@321585a6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68208296_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21d55d5b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dfd636f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c66ca3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b04cbb3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e19c8ae_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/FPGA_dongyan/ip_repo/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32d028a3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75ffd030_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62acf3f0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c75609a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@685a04c4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41ab333a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@282943dd_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4497c1d2_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@127643b1_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bf24c6b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76a0ca40_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52e3bef5_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2674da9e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2097d01e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77ac3496_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ae9fe4e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4896e21c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@295a1620_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26d33e38_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65e36372_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64ebfe8f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a4618b5_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62306440_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379a63aa_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68e02eda_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72061d8a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@237c327_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@277132c2_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@196f066_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10e401a8_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75e65eff_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f538a71_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@418e1253_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bf84470_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bc10e1b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d47737c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76cb5f57_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b31781c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1385a9aa_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50036de4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34f7d0fb_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6612a402_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@141d3315_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@413cd6bc_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@797a74fb_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2508e364_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@594fe896_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32ba1dcb_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a9b8834_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@569a81a3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c41e08_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fc34b03_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3221eaec_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@300a653e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@158f5007_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46ae0167_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22916afb_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@de783cd_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77ade8c3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32927572_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41b8a34c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47955d1d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@284d1863_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57b01aef_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11dc587a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25412c98_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@641db15c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d7cfaaa_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61fa010_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ae0e3c0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dc7f904_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@387bfffc_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72a40ad0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ccd4bc1_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8c109df_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56bfb60f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@152f0934_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@99facea_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@226f1ee4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ad6cc0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@333e5500_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2de31d7c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74f2f454_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56b2ef84_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b2f376b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@535a013a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74029e21_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1842717c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56692e4b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@143dd8b6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6be04b4e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4266aa73_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c5c3292_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1eae514c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d34dc91_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4302e5_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@473fce25_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68b0faf0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1323bfe_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73547d3d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@711ff0b7_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5654955d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68ba5824_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60afd6b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@567d3a61_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ed14ae_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@399679ef_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c832484_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15c2f33b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47dd09ef_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@723b228f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a7aa8c3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5751553a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b076bcf_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f4573d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b5be204_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50d16170_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11887dac_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@542ea230_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70494a6b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c77eec6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21348cc9_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14480fa4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39afdca2_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25cf3579_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20303ea_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24d29132_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@792684a0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3543d15f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40c5b0b9_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fe993c3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c721aea_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3868878f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f331325_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1546c69b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1267e9db_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a881c6c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48595712_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a19684e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69033438_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d2aab14_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cfce0fe_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65403f5d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11f706ee_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ea5e31b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fc402a4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@621eaad0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55850b18_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39d14e71_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b44505_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21a6edb5_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e39be5c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43cbcbbc_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@185932bc_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@284491d6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@eac98b9_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6328709_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b593998_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@219e123_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@141ded54_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@780bc97e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73d00f22_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f2e6e5b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e2f38cd_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69118388_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e3835da_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1128deb4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@85f38c6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@711cc96f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@465dc654_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2659d944_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27db5559_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@638a481_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@400c160d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a71acb0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a1bfa33_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a345971_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78534c18_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@364dadd3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a7fde18_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f7fd7aa_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41a84b35_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b533aa0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26b7604f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61d082f1_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31c1e620_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70391dfc_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49f835ec_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ddf5c19_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a37c9a6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6daf0c7b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f3569aa_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45317d37_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a5b05e5_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79388e0c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57e3b458_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c090ec5_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72076287_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a1100dd_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2edcd108_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f936ff4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7341f445_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f8b6692_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3faca037_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2330fc9a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29e2931d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f627c82_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51aa8dcd_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5345679b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34c2161_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68e3825e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41bc9ec1_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d29b863_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79a868e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65977704_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f213360_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bc8bfff_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@93d92fa_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fa49c70_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26d0b8b2_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b6800df_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f6ad3d0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@691cd54_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f40ed53_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@170df76d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@797854ab_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69d00f75_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5aca089c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58ea4fd0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62467247_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4954043c_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7470d0c0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65922a3d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e9b00bc_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74cefe58_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@606a031a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ee07958_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f01931_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@430b5b3b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4035a614_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48b19435_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53224517_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fd63a3f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dc5d28d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@145e30f6_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a756dbf_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58098f74_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@351bb523_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22ecc3db_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67881e70_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f46159d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78c5681a_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21db192f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cd870e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26779997_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27514729_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20274dd4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53d8a399_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@625578af_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@364710fe_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26d5c78_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@443c07f2_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cd36ad2_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b75a25d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25a5a807_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f491e0d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3123ce09_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34b026ac_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f71979b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@450b54e4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5516f90d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@166a90e3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38a62870_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c9cfca0_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6673004e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46ea63e1_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54fe8dab_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27beb5e9_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fd65c24_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21acde66_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37d61f85_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12efd13d_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@513254c2_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12dedd0b_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a2edba_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53b7fd81_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65ff9b31_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@707e4c4f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e44b8_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42f39318_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@370cda31_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ab3a345_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1614319_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@643f4a5e_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@572990a8_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e258b97_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@728cc565_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f0c37c3_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6197a5f5_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d18a295_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@247d9aaa_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16e7baff_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33d2f327_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a48a31f_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7298cbb4_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ad1c272_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a07dc72_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5883fe28_ARCHIVE_LOCATION">c:/Users/zhudo/Desktop/FA/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@174d8cc5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42adaafa_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b46c236_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45ccf0b1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cc8706f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b1aa3d9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25d7e021_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d0aa96f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@681012ee_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@684fb564_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fee4c1f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d7a7314_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2aebe4d1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ca87b75_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5375e6cf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63fd3a1b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13acbd99_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@463519be_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61440c45_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c811902_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55f0eca2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21395a4a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d060cf6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e18e6b8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73a15187_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f357f91_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@449ecd61_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@211b9cec_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62bdc7ca_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51425326_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c0537a1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28aca52f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a378893_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10ea5c04_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8a06b4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1396b7b5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cb817d4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4343f7ba_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a211c90_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b9b804d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8ec3fa8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@af6728d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6473bbaa_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4168d235_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4329be20_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c9221c6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43fb8933_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a2df42f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f91203f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631fc4bf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23714f34_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@774db98b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16f4829a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58253e9a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7247ad56_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cf3b1dd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@311fa9c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618ea370_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56821e83_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bcc654_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41dde08c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29bf3632_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@392e89a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7afa3c25_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@597e5949_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54d1487_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e4a738_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@732ad042_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@269ff7ef_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@124e8d24_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60a288f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e1cc488_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59e8b1ce_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@424b2eca_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79e86aa9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bc09333_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8849273_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f51837b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@734ba383_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e88f464_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73bef301_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39ccc212_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cfe8d50_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e4d49d0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f4900d6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66a4b885_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@448c713b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48610af1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@eca801_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4411f9a1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20cb9d8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@749fe148_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a8f8c9e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@184fe067_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ac3e6f1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55508764_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31537b1c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e6e94ff_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51e80859_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4826e4f2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5561fcb4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13d4209b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70452c4c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b123f79_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31ea21ce_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37893d7b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ed3d457_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@359d0e3a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45c247a3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f55c049_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e9e0cbf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@731ad8ae_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12e783df_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a884235_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64b22f52_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4160a4ea_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51d79192_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aaf26d4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a2581cb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67570745_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b7f9662_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33044848_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e016002_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61b5f335_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e4764dc_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c48bcf4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54c4569a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43ee0eb8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7460b8da_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6385d586_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f68802c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aa92aaf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d533f5c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b2eab7c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61ad3f66_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ec7a459_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42221e1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cbd9336_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cc5303e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73f016eb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@358f2cf8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1212566c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@638eaeb8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@86bc80e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c2792a0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6562aaf8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7117b123_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12b39b50_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74117841_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@130d017b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@208565c2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a94625d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36fd9965_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ad0d450_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d50bbdf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@384ac6e1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57372165_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@106e5b90_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a668112_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ba69a8b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bbdbc53_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2025f6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c6b9393_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c594204_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72766d8e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a10f2cb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24ac88fb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75741a5e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@641ee3a4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e4f39f6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f8baf97_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3360b47e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@107026d4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a4111f6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b39cbb8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e86adbb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46897e06_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a75fdea_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31ee2af4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ad5fedb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e7abe7c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b03612b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63dd0d9c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@358b0c95_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c594ac2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@468aaa5f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51d65652_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bf2802_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2234ce42_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a58bac3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ff08a2d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36aaa98b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@406a272f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53fd5f75_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bcad89d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5767fa32_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@749872cc_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ef560f0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b8ccd08_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cc981e3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20af1e42_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e7e6493_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50607baa_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ab6852_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54a2be52_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e4ec662_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41bcfa79_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@157c9ad1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@407b4bac_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35ccfe4c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d105852_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4065923d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28cbcc88_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ec6199f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69943f32_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b7ca0af_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7015b2c4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c5e4ddb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75014305_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@248f6d90_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15cb81ba_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30d137b2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6be8eb0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7008c77b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c4219ff_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10e0179c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c0a8728_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e60cfd2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c61be99_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3de6ff86_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@254acda5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3601f374_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@716ae38f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2873214f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14e71237_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46ca1fb4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cad828_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32155141_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_magnet_controller_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0312d308"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="dfb7c9a3"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="c8cc583d"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="960b40cb"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="a73fb746"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

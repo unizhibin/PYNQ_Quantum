@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER fpga_pmod_da4_a1
+	OPTION supported_peripherals = (fpga_pmod_da4_a1);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = fpga_pmod_da4_a1;
+END DRIVER

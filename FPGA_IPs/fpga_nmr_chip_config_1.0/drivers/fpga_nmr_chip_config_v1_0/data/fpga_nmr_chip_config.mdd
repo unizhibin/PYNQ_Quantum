@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER fpga_nmr_chip_config
+	OPTION supported_peripherals = (fpga_nmr_chip_config);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = fpga_nmr_chip_config;
+END DRIVER

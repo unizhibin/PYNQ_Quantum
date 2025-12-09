@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>uni-stuttgart.de</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>dds_mux</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>dac_data_stream</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m_axis_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m_axis_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DATA_STREAM.NUM_READ_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DATA_STREAM.NUM_WRITE_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DATA_STREAM.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s00_axis_aresetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axis_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXIS_ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s01_axis_aresetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s01_axis_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S01_AXIS_ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s00_axis_aclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axis_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXIS_ACLK.ASSOCIATED_RESET">s00_axis_aresetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXIS_ACLK.ASSOCIATED_BUSIF">s00_axis</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXIS_ACLK.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s01_axis_aclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s01_axis_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S01_AXIS_ACLK.ASSOCIATED_RESET">s01_axis_aresetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S01_AXIS_ACLK.ASSOCIATED_BUSIF">s01_axis</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S01_AXIS_ACLK.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s00_axis</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axis_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axis_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s01_axis</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s01_axis_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s01_axis_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesis</spirit:name>
+        <spirit:displayName>VHDL Synthesis</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>dds_mux_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>28c437d9</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlbehavioralsimulation</spirit:name>
+        <spirit:displayName>VHDL Simulation</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>dds_mux_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>28c437d9</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>a54a1a54</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>16328387</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>i_mux</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m_axis_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_NMR_PULSE_DATA_WIDTH&apos;)) - 1)">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m_axis_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axis_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axis_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axis_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXIS_TDATA_WIDTH&apos;)) - 1)">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axis_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s01_axis_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s01_axis_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s01_axis_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S01_AXIS_TDATA_WIDTH&apos;)) - 1)">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s01_axis_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S00_AXIS_TDATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXIS TDATA WIDTH</spirit:displayName>
+        <spirit:description>AXI4Stream sink: Data Width</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:order="3" spirit:rangeType="long">16</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S01_AXIS_TDATA_WIDTH</spirit:name>
+        <spirit:displayName>C S01 AXIS TDATA WIDTH</spirit:displayName>
+        <spirit:description>AXI4Stream sink: Data Width</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S01_AXIS_TDATA_WIDTH" spirit:order="4" spirit:rangeType="long">16</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_NMR_PULSE_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C Nmr Pulse Data Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NMR_PULSE_DATA_WIDTH">16</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_07c83d4f</spirit:name>
+      <spirit:enumeration>16</spirit:enumeration>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/dds_mux_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_28c437d9</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/dds_mux_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/dds_mux_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_a54a1a54</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>dds mux</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXIS_TDATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXIS TDATA WIDTH</spirit:displayName>
+      <spirit:description>AXI4Stream sink: Data Width</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_07c83d4f" spirit:order="3">16</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S01_AXIS_TDATA_WIDTH</spirit:name>
+      <spirit:displayName>C S01 AXIS TDATA WIDTH</spirit:displayName>
+      <spirit:description>AXI4Stream sink: Data Width</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S01_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_07c83d4f" spirit:order="4">16</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">dds_mux_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_NMR_PULSE_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C_NMR_Pulse_Data_Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NMR_PULSE_DATA_WIDTH" spirit:choiceRef="choice_list_07c83d4f">16</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">versal</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplus58g</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">akintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>dds_mux_v1.0</xilinx:displayName>
+      <xilinx:coreRevision>21</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-08-18T08:09:40Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@949d29b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fd58252_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52508d21_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a5b0e1b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22596852_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3269881b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ba51b18_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c3ccf06_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8141b95_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ff68b64_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@643622a3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@456213f3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68fd98eb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a9b9742_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46f3a9d2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bfc0ef6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13ca8d13_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56f88965_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61e063c9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52259e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@719ff4fb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e96003c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b9b0c1c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fea7e45_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@697e3a86_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e166f90_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2958ede_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d5764b2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59c8a9f2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56d5720_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aee3628_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5785c91d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e626752_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d019758_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@238b1664_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f577baf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@211c65f7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@883ab0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@341e4d7c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a3ec218_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56010322_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3570fb2b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@299de2c8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31c08c99_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@789e1f54_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76097732_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d796ed9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5045b955_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@83f0b30_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@576eca7a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c5406a4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66977d5f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46402d23_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@311ffab8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@87658f7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65b80708_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53dba8a2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dfd077c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c19a0ee_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59d9f34a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e87eb08_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@715a35ff_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bcd368d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18580a91_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c6f4773_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4851436f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b5f888_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15a5a217_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62462f0e_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b4f6e69_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@188a016e_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c8553e6_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@614f45a6_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ef92e8d_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e0d8397_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dd22530_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b690e25_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38539788_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618fa4ef_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eac9326_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19797d3_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@252f0528_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@466ae06a_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@553ea45c_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f40193_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@196a10b5_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@540ecf14_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17128ce8_ARCHIVE_LOCATION">c:/Users/st146644/Desktop/FPGA/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ad960bf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/16_beta/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@491b4e1d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/16_beta/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26809331_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/16_beta/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a584f0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/16_beta/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@769727ce_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/16_beta/Zhibin_ip/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f7268f6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dd01fd0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62f5e35a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3814d485_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c212fe8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11820a6f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72c28b04_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@270f0df1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35332ddd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@475bcb6e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5079b4a7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5145b687_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d96bc34_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b5e3aae_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e26eccb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78aa2422_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bd4d2e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d48ab6f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a846393_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29003c32_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ffb5ed1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a6be10a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52f6076e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8995942_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33d3f7ef_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1696d319_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30d9a2d0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fcd7132_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2813670d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7eaa36a0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e90b47_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bcd1477_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@504b7eff_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f45f1f5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a47f321_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26b8a11_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@696c9a50_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cc239_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67738585_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2060f9da_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5013aebd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@153af65_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631d26fc_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@380bdb3b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f999018_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7177fe37_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7577f091_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d6cc6a4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@435ae0e0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a871df7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e506a90_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fe9307c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@abf27e7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dca752_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39e1f853_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b95f2c5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23de65c1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b154c91_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78156fb0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1618ed70_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15d26a93_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a9e9764_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9aef2b6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39137e57_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b663d23_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76c00ab2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4909976b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1454dc82_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76866ed8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1465b987_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5602a3a9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@505fe0c4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41ef6883_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f1f3aae_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@219f2c8f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58b8d7e6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38685b2a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6adcd444_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1168e51b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56f5817f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11535bb9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bbb3ed2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30064286_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79978df3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fb9563a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7862ee03_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d680e75_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79d5c882_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c04c08a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dac0348_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3812a756_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ad30496_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c64ca8c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46373be2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a0c8f3c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76f97b0b_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33d703b9_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc1cfa2_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19fab7bf_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12429f5a_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c3a2547_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23b0bb4c_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11b8f50c_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2093f3d0_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b56c6ef_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a4fd83e_ARCHIVE_LOCATION">e:/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@783fc322_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c4fdea_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2acc429a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54a3dd7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a20cebf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6562cd63_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d2fe3f4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eef4e6d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b09711f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ba9a3ea_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ad2deca_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2602ba1c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@82b23e5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fd15eb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cf890ba_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a3355fa_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6deb6b9a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2db2dfc3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64f0fff2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b41a336_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@277ed93d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73b0c2b6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f173f71_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16612f53_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ed99032_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fb1fe13_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@605397af_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51c0a9a4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13e0c145_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@449c726b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@627461a9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59c34033_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14657637_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78674c6f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c230327_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3762480a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@472a26ef_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75167ad0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1db3f106_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58ff4253_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53805d85_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@329a8a36_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c591e74_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b15b6a0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e1f1bcf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c9291c1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74f74b0f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@103f8865_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d975018_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d06569f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a04c394_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d1ab817_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78eaed3f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e084682_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4860cb0a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@412815e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f1006e6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25453b66_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10724e2e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29685a5e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@264f0e0f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e56f18e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4704495f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@105eb675_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29a655d3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6294a016_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@734de253_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24321b05_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@462690e6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a563581_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55ea8861_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ce83769_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/dds_mux_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2023.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="76109e2c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2b71f9b6"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="e077e9d1"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="48574ca6"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="523384be"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER fpga_adc_max11198
+	OPTION supported_peripherals = (fpga_adc_max11198);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = fpga_adc_max11198;
+END DRIVER

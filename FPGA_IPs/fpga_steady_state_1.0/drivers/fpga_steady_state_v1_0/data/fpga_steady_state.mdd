@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER fpga_steady_state
+	OPTION supported_peripherals = (fpga_steady_state);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = fpga_steady_state;
+END DRIVER
