@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 11:06:47 On 30.11.2023
+
+Output: Bill of Materials
+Type  : BOM
+From  : BOM Document [ActiveBOM.BomDoc]
+   Generated File[_BOM DOC NO__BOM.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:06:50 On 30.11.2023

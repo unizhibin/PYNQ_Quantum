@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Backend_v2.PcbDoc   25.11.2023  16:41:08
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer [SIG] to Bottom Layer [SIG]
+ASCII RoundHoles File : Backend_v2.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             684       PTH        81.39inch (2067.31mm)
+T2      16mil (0.399mm)                                           Round             32        PTH        15.45inch (392.48mm)
+T3      28mil (0.701mm)                                           Round             14        PTH        1.35inch (34.22mm)
+T4      32mil (0.8mm)                                             Round             4         PTH        1.50inch (38.10mm)
+T5      47mil (1.199mm)                                           Round             2         PTH        0.15inch (3.81mm)
+T6      55mil (1.4mm)                                             Round             2         PTH        3.69inch (93.74mm)
+T7      59mil (1.501mm)                                           Round             8         PTH        4.75inch (120.53mm)
+T8      122mil (3.099mm)                                          Round             2         PTH        2.48inch (63.00mm)
+T9      146mil (3.701mm)                                          Round             4         PTH        11.58inch (294.02mm)
+T10     50mil (1.27mm)                                            Round             2         NPTH       2.14inch (54.47mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              754
+
+Total Processing Time (hh:mm:ss) : 00:00:01

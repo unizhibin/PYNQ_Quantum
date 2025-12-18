@@ -1,0 +1,221 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc
+Date     : 16.10.2023
+Time     : 13:13:24
+
+Processing Rule : Clearance Constraint (Gap=0.102mm) ((InNetClass('ADC_A_IN') OR InNetClass('ADC_OUT') OR InNetClass('LNA_SIG'))),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.102mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Track (71.25mm,29.5mm)(71.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (71.25mm,29.5mm)(88.25mm,29.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (71.25mm,37.5mm)(88.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (88.25mm,29.5mm)(88.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+Rule Violations :4
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.09mm) (Max=1816.048mm) (Preferred=0.102mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InPadClass('PowerPads'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.3mm) (Conductor Width=0.102mm) (Air Gap=0.102mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.075mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.13mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (100mm,-22.5mm)(100mm,-9.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (80.5mm,-9.5mm)(99.75mm,-9.5mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (80.5mm,9mm)(99.75mm,9mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (84.5mm,-22.5mm)(100mm,-22.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (84.5mm,-9.5mm)(100mm,-9.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.17mm < 0.2mm) Between Board Edge And Track (93.5mm,-11.5mm)(99.73mm,-11.5mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.17mm < 0.2mm) Between Board Edge And Track (93.5mm,-20.505mm)(99.73mm,-20.505mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.17mm < 0.2mm) Between Board Edge And Track (99.73mm,-20.505mm)(99.73mm,-11.5mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (99.75mm,-9.5mm)(99.75mm,9mm) on Bottom Overlay 
+Rule Violations :9
+
+Processing Rule : Matched Lengths(Delay Tolerance=10ps) (InNetClass('ADC_A_IN'))
+Rule Violations :0
+
+Processing Rule : Matched Lengths(Delay Tolerance=10ps) (InNetClass('ADC_OUT'))
+Rule Violations :0
+
+Processing Rule : Room LPF-DAC-2 (Bounding Region = (55.773mm, 91.823mm, 72.927mm, 103.327mm) (InComponentClass('LPF-DAC-2'))
+Rule Violations :0
+
+Processing Rule : Room ADC2 (Bounding Region = (56.2mm, 46.6mm, 71mm, 57.1mm) (InComponentClass('ADC2'))
+Rule Violations :0
+
+Processing Rule : Room ConnectorFront (Bounding Region = (106.196mm, 64.446mm, 142.904mm, 102.554mm) (InComponentClass('ConnectorFront'))
+Rule Violations :0
+
+Processing Rule : Room Power (Bounding Region = (47.371mm, 35.676mm, 125.854mm, 108.559mm) (InComponentClass('Power'))
+Rule Violations :0
+
+Processing Rule : Room ConnectorFMC (Bounding Region = (27.356mm, 32.646mm, 57.679mm, 101.195mm) (InComponentClass('ConnectorFMC'))
+Rule Violations :0
+
+Processing Rule : Room LPF-ADC2 (Bounding Region = (89.821mm, 52.971mm, 105.029mm, 67.979mm) (InComponentClass('LPF-ADC2'))
+Rule Violations :0
+
+Processing Rule : Room LPF-DAC-1 (Bounding Region = (80.373mm, 91.823mm, 99.377mm, 107.677mm) (InComponentClass('LPF-DAC-1'))
+Rule Violations :0
+
+Processing Rule : Room TRX Protection Circuit (Bounding Region = (78.173mm, 58.073mm, 87.827mm, 68.327mm) (InComponentClass('TRX Protection Circuit'))
+Rule Violations :0
+
+Processing Rule : Room DAC (Bounding Region = (57.848mm, 65.531mm, 85.277mm, 89.877mm) (InComponentClass('DAC'))
+Rule Violations :0
+
+Processing Rule : Room LPF-DAC (Bounding Region = (58.013mm, 86.528mm, 97.287mm, 91.677mm) (InComponentClass('LPF-DAC'))
+Rule Violations :0
+
+Processing Rule : Room OCXO (Bounding Region = (26.998mm, 45.398mm, 36.802mm, 68.027mm) (InComponentClass('OCXO'))
+Rule Violations :0
+
+Processing Rule : Room ADC1 (Bounding Region = (56.2mm, 57.6mm, 71mm, 68.1mm) (InComponentClass('ADC1'))
+Rule Violations :0
+
+Processing Rule : Room Ref Freq DC LVL Shift (Bounding Region = (103.973mm, 95.323mm, 107.627mm, 101.077mm) (InComponentClass('Ref Freq DC LVL Shift'))
+Rule Violations :0
+
+Processing Rule : Room LPF-ADC1 (Bounding Region = (89.821mm, 70.171mm, 105.029mm, 85.204mm) (InComponentClass('LPF-ADC1'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=1816.048mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Un-Routed Net Constraint ( (All) )
+   Waived Violation between Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (1 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (2 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+   Waived Violation between Un-Routed Net Constraint: Region (3 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.Waived by Tobias Wirth at 15.10.2023 12:36:03Texts and logos have unassigned nets
+Waived Violations :10
+
+Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.075mm) (All)
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (33.5mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (34.1mm,3.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (34.2mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (34.6mm,-10.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:50:34Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (34.8mm,3.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (34.9mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (35.4mm,2.7mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (35.678mm,3.451mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (35.6mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (35.9mm,2.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (36.239mm,3.976mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (36.3mm,8.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (36.4mm,1.7mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (36.8mm,4.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (36.8mm,8.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.3mm,5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.3mm,9.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.8mm,5.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.8mm,9.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.9mm,12.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.2mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.3mm,10.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.3mm,6mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.6mm,12.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.8mm,10.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.8mm,6.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.9mm,3.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.9mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.3mm,11.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.3mm,12.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.3mm,7mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.6mm,3.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.6mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.8mm,12.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.9mm,11.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (40.1mm,7.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (40.3mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (40.5mm,11.6mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (40.5mm,12.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (40.8mm,7.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (41.5mm,7.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (41.7mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+   Waived Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (41mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)Waived by Tobias Wirth at 15.10.2023 12:36:49Rounding error
+Waived Violations :43
+
+Waived Violations Of Rule : Minimum Solder Mask Sliver (Gap=0.13mm) (All),(All)
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.091mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.091mm]Waived by Tobias Wirth at 15.10.2023 12:51:03Logo
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.093mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.093mm]Waived by Tobias Wirth at 15.10.2023 12:51:03Logo
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.097mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.097mm]Waived by Tobias Wirth at 15.10.2023 12:51:03Logo
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.128mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.128mm]Waived by Tobias Wirth at 15.10.2023 12:51:03Logo
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.119mm < 0.13mm) Between Region (1 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.119mm]Waived by Tobias Wirth at 15.10.2023 12:51:03Logo
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.128mm < 0.13mm) Between Region (2 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.128mm]Waived by Tobias Wirth at 15.10.2023 12:51:03Logo
+Waived Violations :6
+
+Waived Violations Of Rule : Net Antennae (Tolerance=0mm) (All)
+   Waived Violation between Net Antennae: Via (3.3mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (3.3mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (3.3mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (3.3mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (6.7mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (6.7mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (6.7mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (6.7mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (93.3mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (93.3mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (93.3mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (93.3mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (96.7mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (96.7mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (96.7mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+   Waived Violation between Net Antennae: Via (96.7mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] Waived by Tobias Wirth at 15.10.2023 12:51:50Optics in mounting holes
+Waived Violations :16
+
+Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (100mm,-20.505mm)(100mm,-11.495mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (100mm,-22mm)(100mm,-21.795mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (117.05mm,-7.7mm)(117.05mm,7.7mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (81.05mm,7.7mm)(117.05mm,7.7mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (81.05mm,-7.7mm)(117.05mm,-7.7mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (90.73mm,-11.495mm)(100mm,-11.495mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (90.73mm,-20.505mm)(100mm,-20.505mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (98.679mm,-20.474mm)(100mm,-21.795mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (98.734mm,-9.508mm)(99.988mm,-10.762mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+Waived Violations :9
+
+
+Violations Detected : 13
+Waived Violations : 84
+PCB Health Issues : 0
+Time Elapsed        : 00:00:02

@@ -1,0 +1,20 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [ASIC-Board.PcbDoc]
+   Generated File[ASIC-Board.GTO]
+   Generated File[ASIC-Board.GTS]
+   Generated File[ASIC-Board.GTL]
+   Generated File[ASIC-Board.GBL]
+   Generated File[ASIC-Board.GBS]
+   Generated File[ASIC-Board.GBO]
+   Generated File[ASIC-Board.GM1]
+   Generated File[ASIC-Board.GM2]
+   Generated File[ASIC-Board.RUL]
+   Generated File[ASIC-Board.EXTREP]
+   Generated File[ASIC-Board.REP]
+
+
+Files Generated   : 11
+Documents Printed : 0
+
+Finished Output Generation At 17:14:38 On 25.09.2023

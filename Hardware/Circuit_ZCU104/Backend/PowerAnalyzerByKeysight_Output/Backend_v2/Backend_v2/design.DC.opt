@@ -1,0 +1,80 @@
+OptFile 1.0
+
+//--- process options -----------------------------------
+Process.multiThreading: 1
+Process.maxThreads: 20
+Process.statistics: 1
+
+//--- layout options ------------------------------------
+Layout.checkMesh: 1
+Layout.boundaryMaterial: 1
+Layout.boundaryThickness: 0
+
+//--- substrate options ---------------------------------
+Substrate.mesh: 1
+Substrate.meshDensity: 1
+Substrate.maxDensity: 100
+Substrate.connection: 1
+
+//--- electric options -----------------------------------
+Electric.method: 1
+Electric.solver: 0
+Electric.reference: 0
+Electric.nportAnalysis: 1
+Electric.nportReference: 50
+
+//--- thermal options -----------------------------------
+Thermal.method: 1
+Thermal.solver: 0
+Thermal.reference: 0
+Thermal.jouleLoss: 1
+Thermal.deviceLoss: 1
+Thermal.nportAnalysis: 1
+Thermal.nportReference: 50
+
+//--- electro-thermal options ---------------------------
+Solver.maxIterations: 5
+Solver.deltaVoltage: 0.01
+Solver.deltaTemperature: 1
+
+//--- electric regulation options -----------------------
+Regulation.mode: 1
+Regulation.minIterations: 1
+Regulation.maxIterations: 5
+
+//--- coupling options ----------------------------------
+Coupling.basisOrder: 2
+Coupling.greenAccuracy: 4
+Coupling.frequencyRF: 1e+06
+
+//--- matrix solver options -----------------------------
+Matrix.package: 2
+Matrix.loader: 2
+Matrix.solver: 1
+Matrix.progress: 0
+Matrix.verbose: 0
+Matrix.improve: 0
+Matrix.minSteps: 0
+Matrix.maxSteps: 0
+Matrix.maxError: 1e-06
+Matrix.residual: 0
+Matrix.condition: 0
+Matrix.spectrum: 0
+Matrix.sparsity: 0
+Matrix.vtkFiles: 0
+
+//--- network solver options ----------------------------
+Network.solver: 0
+Network.minSteps: 10
+Network.maxSteps: 1000
+Network.maxError: 1e-08
+
+//--- output options ------------------------------------
+Output.matrix: 0
+Output.solver: 0
+Output.solution: 0
+Output.vtkFiles: 0
+Output.logFiles: 0
+Output.jsonFile: 1
+Output.ovmBinary: 1
+

@@ -1,0 +1,176 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend_v2.PcbDoc
+Date     : 28.11.2023
+Time     : 14:18:41
+
+Processing Rule : Clearance Constraint (Gap=0.102mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.102mm) ((InNetClass('ADC_A_IN') OR InNetClass('ADC_OUT') OR InNetClass('LNA_SIG'))),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Track (71.25mm,29.5mm)(71.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (71.25mm,29.5mm)(88.25mm,29.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (71.25mm,37.5mm)(88.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (88.25mm,29.5mm)(88.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.
+Rule Violations :4
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.09mm) (Max=1816.048mm) (Preferred=0.102mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InPadClass('PowerPads'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.3mm) (Conductor Width=0.102mm) (Air Gap=0.102mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.075mm) (All)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (20.75mm,-26.79mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (25.75mm,-27.725mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (35.075mm,6.778mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (35.9mm,6.778mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (36.4mm,7.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (36.4mm,8.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.1mm,7.4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.1mm,8.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (37.625mm,8.675mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.3mm,9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (38.975mm,9.225mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (39.367mm,9.829mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (40.071mm,10.071mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (40.775mm,10.325mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (41.225mm,10.875mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (41.7mm,11.6mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (42.1mm,11.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (42.525mm,11.675mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (43.2mm,12mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (43.875mm,12.225mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (44.325mm,12.775mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (45.675mm,13.325mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (45mm,13.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (46.067mm,13.929mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (46.771mm,14.171mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (47.475mm,14.425mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.074999mm (2.9527mil) < 0.075001mm (2.9528mil)) Via (48mm,14.896mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)
+Rule Violations :27
+
+Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.13mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.091mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.091mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.093mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.093mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.097mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.097mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.128mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.128mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.129mm < 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.129mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.119mm < 0.13mm) Between Region (1 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.119mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.128mm < 0.13mm) Between Region (2 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.128mm]
+Rule Violations :7
+
+Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Via (3.3mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (3.3mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (6.7mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (6.7mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (93.3mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (93.3mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (93.3mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (93.3mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (96.7mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (96.7mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (96.7mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+   Violation between Net Antennae: Via (96.7mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] 
+Rule Violations :12
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (80.5mm,-9.5mm)(99.75mm,-9.5mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (80.5mm,9mm)(99.75mm,9mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (84.25mm,-13mm)(99.75mm,-13mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (84.25mm,-26mm)(99.75mm,-26mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.17mm < 0.2mm) Between Board Edge And Track (93.5mm,-11.5mm)(99.73mm,-11.5mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.17mm < 0.2mm) Between Board Edge And Track (93.5mm,-27.5mm)(99.73mm,-27.5mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.17mm < 0.2mm) Between Board Edge And Track (99.73mm,-27.5mm)(99.73mm,-11.5mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (99.75mm,-26mm)(99.75mm,-13mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (99.75mm,-9.5mm)(99.75mm,9mm) on Bottom Overlay 
+Rule Violations :9
+
+Processing Rule : Matched Lengths(Delay Tolerance=10ps) (InNetClass('ADC_OUT'))
+Rule Violations :0
+
+Processing Rule : Matched Lengths(Delay Tolerance=10ps) (InNetClass('ADC_A_IN'))
+   Violation between Matched Net Lengths: Between Net ADC_IN_ADC1_N And Net ADC_IN_ADC2_N Delay:167,269ps is not within 10ps tolerance of Delay:177,323ps (0,054ps smaller) 
+   Violation between Matched Net Lengths: Between Net ADC_IN_ADC1_N And Net ADC_IN_ADC2_P Delay:161,56ps is not within 10ps tolerance of Delay:177,323ps (5,763ps smaller) 
+Rule Violations :2
+
+Processing Rule : Room LPF-DAC (Bounding Region = (70.771mm, 94.321mm, 106.929mm, 99.979mm) (InComponentClass('LPF-DAC'))
+Rule Violations :0
+
+Processing Rule : Room LPF-DAC-1 (Bounding Region = (52.521mm, 95.271mm, 69.479mm, 108.529mm) (InComponentClass('LPF-DAC-1'))
+Rule Violations :0
+
+Processing Rule : Room LPF-DAC-2 (Bounding Region = (81.521mm, 97.471mm, 96.479mm, 108.529mm) (InComponentClass('LPF-DAC-2'))
+Rule Violations :0
+
+Processing Rule : Room OCXO (Bounding Region = (27.75mm, 42.75mm, 52mm, 58.25mm) (InComponentClass('OCXO'))
+Rule Violations :0
+
+Processing Rule : Room TRX Protection Circuit (Bounding Region = (78.021mm, 57.921mm, 92.179mm, 67.729mm) (InComponentClass('TRX Protection Circuit'))
+Rule Violations :0
+
+Processing Rule : Room PDN Backend (Bounding Region = (46.471mm, 35.471mm, 125.604mm, 106.759mm) (InComponentClass('PDN Backend'))
+Rule Violations :0
+
+Processing Rule : Room DAC (Bounding Region = (57.796mm, 69.021mm, 91.729mm, 99.279mm) (InComponentClass('DAC'))
+Rule Violations :0
+
+Processing Rule : Room ConnectorFMC (Bounding Region = (27.356mm, 32.646mm, 54.354mm, 101.195mm) (InComponentClass('ConnectorFMC'))
+Rule Violations :0
+
+Processing Rule : Room LPF-ADC2 (Bounding Region = (87.971mm, 43.021mm, 103.729mm, 58.029mm) (InComponentClass('LPF-ADC2'))
+Rule Violations :0
+
+Processing Rule : Room ADC1 (Bounding Region = (59.771mm, 55.021mm, 73.279mm, 67.229mm) (InComponentClass('ADC1'))
+Rule Violations :0
+
+Processing Rule : Room ADC2 (Bounding Region = (59.771mm, 42.271mm, 73.279mm, 54.479mm) (InComponentClass('ADC2'))
+Rule Violations :0
+
+Processing Rule : Room LPF-ADC1 (Bounding Region = (87.971mm, 60.021mm, 103.479mm, 75.029mm) (InComponentClass('LPF-ADC1'))
+Rule Violations :0
+
+Processing Rule : Room ConnectorFront (Bounding Region = (106.25mm, 64.5mm, 142.75mm, 102.75mm) (InComponentClass('ConnectorFront'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=1816.048mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (117.05mm,-7.7mm)(117.05mm,7.7mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (81.05mm,7.7mm)(117.05mm,7.7mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (81.05mm,-7.7mm)(117.05mm,-7.7mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (90.48mm,-14.995mm)(99.75mm,-14.995mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (90.48mm,-24.005mm)(99.75mm,-24.005mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+   Waived Violation between Board Outline Clearance(Outline Edge): (0.15mm < 0.2mm) Between Board Edge And Track (99.75mm,-24.005mm)(99.75mm,-14.995mm) on Top Overlay Waived by Tobias Wirth at 15.10.2023 12:52:16Intentional clearance violatoins of IO connectors
+Waived Violations :6
+
+
+Violations Detected : 61
+Waived Violations : 6
+PCB Health Issues : 0
+Time Elapsed        : 00:00:02

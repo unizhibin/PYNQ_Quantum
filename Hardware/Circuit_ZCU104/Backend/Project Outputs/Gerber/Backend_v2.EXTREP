@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: Backend_v2.GBR   25.11.2023  16:41:07
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GTL                Top Layer [SIG]                         
+.G1                 Mid Layer 1 [GND]                       
+.G2                 Mid Layer 2 [SIG]                       
+.G3                 Mid Layer 3 [PWR]                       
+.G4                 Mid Layer 4 [GND]                       
+.GBL                Bottom Layer [SIG]                      
+.GBS                Bottom Solder                           
+.GBP                Bottom Paste                            
+.GBO                Bottom Overlay                          
+.GM1                Mechanical 1                            
+.GM2                Outline                                 
+------------------------------------------------------------------------------------------

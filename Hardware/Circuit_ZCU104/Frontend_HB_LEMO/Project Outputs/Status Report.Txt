@@ -1,0 +1,34 @@
+Output: ODB++ Files
+Type  : ODB
+From  : Variant [[No Variations]] of Project [Frontend_HB_LEMO.PrjPcb]
+   Generated File[profile]
+   Generated File[stephdr]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[tools]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[features]
+   Generated File[components]
+   Generated File[data]
+   Generated File[netlist]
+   Generated File[matrix]
+   Generated File[Frontend.REP]
+
+
+Files Generated   : 25
+Documents Printed : 0
+
+Finished Output Generation At 2:36:01 PM On 4/25/2025

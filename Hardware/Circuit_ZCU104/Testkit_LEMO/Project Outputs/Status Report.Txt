@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Testkit_v2.PcbDoc]
+   Generated File[Testkit_v2.TXT]
+   Generated File[Testkit_v2.LDP]
+   Generated File[Testkit_v2.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 14:08:50 On 24.11.2023

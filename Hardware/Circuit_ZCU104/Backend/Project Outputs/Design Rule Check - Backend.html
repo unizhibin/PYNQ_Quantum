@@ -1,0 +1,769 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16.10.2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">13:13:24</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc" class="file"><acronym title="C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc">C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">13</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">84</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">PCB Health Issues:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+</table>
+</td>
+</table><a name="IDU5KNKTSRA4QHHN2BP3SAGGMROHV5WOWBPE4NKYFIZKGRG0VWYMUM"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOMFC34P0J4CWLKD33BN1M1EDICIFMVBXJFZMMGCAS24K0KKX0DKM">Clearance Constraint (Gap=0.102mm) ((InNetClass('ADC_A_IN') OR InNetClass('ADC_OUT') OR InNetClass('LNA_SIG'))),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMPVUHIXDXI3OGZ3JR00L0SQDOLN0E5SYUOF3IDEOJVHNJXQN2O4M">Clearance Constraint (Gap=0.102mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0XAKXIZ3U4K2FKV01SIHSDOIPN4WQZ13MQESG0LXFCQTTXSJBWOF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKWODQGQCZB2LBFH5XNJJOGUIQOFGNSONGSB2RLPAE2NS41YDYVHL">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRR0SFMYO3LAGNMRPN1U2XWLFQHF2OIHCAKH3STHSMTV5MLIVJ2GB">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEIHNIIHH0I4EOCPA4A1YYT0BLEOOJGI25ZSXAQEG33V22KANIZNM">Width Constraint (Min=0.09mm) (Max=1816.048mm) (Preferred=0.102mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5CBQW30IGVVSCN2HYNJXFPGNWMWG3YM4I23H1OB2WVR14BOA5JRF">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKVKPAUR0KT01FTMBGEDSPXPUIM32XI53VT3TQGND20U1EUXM3S4E">Power Plane Connect Rule(Direct Connect )(Expansion=0.3mm) (Conductor Width=0.102mm) (Air Gap=0.102mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYSAKGWWG01R4C5FTHMTIEL3OFN0IXSPD0NXD51MIV05UNCCWAK4N">Minimum Annular Ring (Minimum=0.075mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDARYGIKLGXPTXEPTQKTEL1YMNDMCXQ1Z1KPRJPDLDWADJVZXMRCDF">Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHNZQTM2PDGA3PHLD1CGTEJ015JPYCYPEBKI2VJO3CCEJPQJ1QYBK">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDY4VKMQ51ZIDUSSWDMREPPUH5KVB1BHP1WGC2QGRQX1FF43HURLH">Minimum Solder Mask Sliver (Gap=0.13mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZWWWEADESKZ5E0ZNO3AIL5FVFFFBBYQRE0VY12POM2KJDFCWN0XL">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPE1DQKKYXFP3JPTJS4KHAHZR2BGJRVUAC3Z2FYEDGT0LAOY2D4OO">Silk to Silk (Clearance=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4IVVWPTITHC0P12CT2ZTHMS54CWKI3RVFEB2A0POSLM13E4URIGP">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHWUNDDTVNQFWPJKR1O0LTSKPWD4ASVWQ2N1EKB3FFY2OVKB2GBG">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">9</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCJ0IAIZ0WIOAI1ON0B33GXFFWMQFMTFHP1IHDMLKOTFLTCEYQMZO">Matched Lengths(Delay Tolerance=10ps) (InNetClass('ADC_A_IN'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDK402OYPKC0EMB5QIET2CQSEBRKTSSSKGK3SRTFJQKCLVARRC3B4I">Matched Lengths(Delay Tolerance=10ps) (InNetClass('ADC_OUT'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN02FMZ5WWBGXILDWZPGR5KA0FJMC1QDKS1CF4JO24N3YURC1ZIPO">Room LPF-DAC-2 (Bounding Region = (55.773mm, 91.823mm, 72.927mm, 103.327mm) (InComponentClass('LPF-DAC-2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWX2BYTO0N15UNVWAQ12DKP5A0K4SRQ2XZ0VCW2CNC14E14W3UWDN">Room ADC2 (Bounding Region = (56.2mm, 46.6mm, 71mm, 57.1mm) (InComponentClass('ADC2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCTNRGAKBVXIVLWT0PXOC4S4KPCAM4MPSF0JJ4RCFC3ERU5MPUUQJ">Room ConnectorFront (Bounding Region = (106.196mm, 64.446mm, 142.904mm, 102.554mm) (InComponentClass('ConnectorFront'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJU3XUN2SHEGDHH3E41RQPD0VHOM23SSSTWDX41LDA2KVCC5NQNG">Room Power (Bounding Region = (47.371mm, 35.676mm, 125.854mm, 108.559mm) (InComponentClass('Power'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIVTXJYYSNU0CH4QKPXNEEJZISHAOQ2Z4W445MEBKAW4KBDSHPO0J">Room ConnectorFMC (Bounding Region = (27.356mm, 32.646mm, 57.679mm, 101.195mm) (InComponentClass('ConnectorFMC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDK2DA0JWVZOPCP2C1TANWCXEGXBOHASJYE3YD5MOO4ECHK5FRKEG">Room LPF-ADC2 (Bounding Region = (89.821mm, 52.971mm, 105.029mm, 67.979mm) (InComponentClass('LPF-ADC2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0D13RUTMKBG4IB1BQK1PSO4C4BCM1PVXKVTCF0PS51ZIK4IKRBIJ">Room LPF-DAC-1 (Bounding Region = (80.373mm, 91.823mm, 99.377mm, 107.677mm) (InComponentClass('LPF-DAC-1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIM4VV3FJPY52JVSJTN3R5OKVOBQFIP0IZM2EOTHGDCBYZMLJLLUD">Room TRX Protection Circuit (Bounding Region = (78.173mm, 58.073mm, 87.827mm, 68.327mm) (InComponentClass('TRX Protection Circuit'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDC4FHFVOQNQW4LNFIGIQ5IHQO3OP1HMP102M1I2KGS5KLDJ35MCIG">Room DAC (Bounding Region = (57.848mm, 65.531mm, 85.277mm, 89.877mm) (InComponentClass('DAC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHL1ZW0XEHKBUOFVJUI0BWPHB0GMQFZMJ22AEJEBYVAKOVJMI0WKO">Room LPF-DAC (Bounding Region = (58.013mm, 86.528mm, 97.287mm, 91.677mm) (InComponentClass('LPF-DAC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID03ZHSARJSFPQFMWGS53GGV0YLH03UUZSCNY4AHMEDWZXL0ZFOTSO">Room OCXO (Bounding Region = (26.998mm, 45.398mm, 36.802mm, 68.027mm) (InComponentClass('OCXO'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGCSUV4WWYJZ1FMKJ50HZIEMOCEBQSERGHKHVQOKFO1SXXSB3Y5FJ">Room ADC1 (Bounding Region = (56.2mm, 57.6mm, 71mm, 68.1mm) (InComponentClass('ADC1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3ADM3ACWEJNOBDB5YGTPXP3TYOQVKGEXU14Y24JCVSLNMQHAF1KL">Room Ref Freq DC LVL Shift (Bounding Region = (103.973mm, 95.323mm, 107.627mm, 101.077mm) (InComponentClass('Ref Freq DC LVL Shift'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRNAUR0SBJEBWNCMUWR5EJAYJBFRIJY1DQXKCBMEWVQTFPVFNUGFK">Room LPF-ADC1 (Bounding Region = (89.821mm, 70.171mm, 105.029mm, 85.204mm) (InComponentClass('LPF-ADC1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1BMWDGWSELNLLB2RGWP4RECUFCMNIK1SCVLDMMFBYGR0AS3I542">Height Constraint (Min=0mm) (Max=1816.048mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">13</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJSQHMJM2XHHOIY5IMBLUUOC3ULB1N11FHHK3I1FNCI5ZKCXV5OTL">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">10</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDO0PMDSOCLGNVJYTZSP4IZLXLSOIPYS4HFUUQQPNIGPMBPGMMTKK">Minimum Annular Ring (Minimum=0.075mm) (All)</a></td>
+<td class="column2">43</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTNNQZ1Z3UHWWMFEVNXURK1VHFED0O35QJDWDH2OHXN42ALXEHMWM">Minimum Solder Mask Sliver (Gap=0.13mm) (All),(All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMHFVPK51LKLQHXQMERI1253DHH2CNVNVY51UHWKNAN0AGC44WC2E">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3BRTCHVAVV2WLOWNPEDZA3LRWEEWBJDS2FY5TOJ5A4G2L0QIZJRD">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">9</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">84</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">PCB Health Issues</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><a name="IDWQK2XFH1EBEOBI4SDTGNDECOWJO33WCRTSFADYCQMTML5FK1FLOJ"><h2>Rule Violations</h2></a><a name="IDKWODQGQCZB2LBFH5XNJJOGUIQOFGNSONGSB2RLPAE2NS41YDYVHL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.595mil|Location2.X=3811.516mil|Location1.Y=4013.287mil|Location2.Y=4333.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.595mil|Location2.X=3811.516mil|Location1.Y=4013.287mil|Location2.Y=4333.174mil|Absolute=True">Un-Routed Net Constraint: Track (71.25mm,29.5mm)(71.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.595mil|Location2.X=4480.812mil|Location1.Y=4013.287mil|Location2.Y=4018.209mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.595mil|Location2.X=4480.812mil|Location1.Y=4013.287mil|Location2.Y=4018.209mil|Absolute=True">Un-Routed Net Constraint: Track (71.25mm,29.5mm)(88.25mm,29.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.595mil|Location2.X=4480.812mil|Location1.Y=4328.253mil|Location2.Y=4333.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.595mil|Location2.X=4480.812mil|Location1.Y=4328.253mil|Location2.Y=4333.174mil|Absolute=True">Un-Routed Net Constraint: Track (71.25mm,37.5mm)(88.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.891mil|Location2.X=4480.812mil|Location1.Y=4013.287mil|Location2.Y=4333.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.891mil|Location2.X=4480.812mil|Location1.Y=4013.287mil|Location2.Y=4333.174mil|Absolute=True">Un-Routed Net Constraint: Track (88.25mm,29.5mm)(88.25mm,37.5mm) on Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHWUNDDTVNQFWPJKR1O0LTSKPWD4ASVWQ2N1EKB3FFY2OVKB2GBG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2221.285mil|Location2.Y=2227.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2221.285mil|Location2.Y=2227.534mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (100mm,-22.5mm)(100mm,-9.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.43mil|Location2.X=4942.554mil|Location1.Y=2475.753mil|Location2.Y=2484.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.43mil|Location2.X=4942.554mil|Location1.Y=2475.753mil|Location2.Y=2484.877mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.15mm &lt; 0.2mm) Between Board Edge And Track (80.5mm,-9.5mm)(99.75mm,-9.5mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.43mil|Location2.X=4942.554mil|Location1.Y=3204.099mil|Location2.Y=3213.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.43mil|Location2.X=4942.554mil|Location1.Y=3204.099mil|Location2.Y=3213.223mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.15mm &lt; 0.2mm) Between Board Edge And Track (80.5mm,9mm)(99.75mm,9mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=1965.379mil|Location2.Y=1971.629mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=1965.379mil|Location2.Y=1971.629mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (84.5mm,-22.5mm)(100mm,-22.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2477.19mil|Location2.Y=2483.44mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2477.19mil|Location2.Y=2483.44mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (84.5mm,-9.5mm)(100mm,-9.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.037mil|Location2.X=4942.161mil|Location1.Y=2397.013mil|Location2.Y=2406.137mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.037mil|Location2.X=4942.161mil|Location1.Y=2397.013mil|Location2.Y=2406.137mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.17mm &lt; 0.2mm) Between Board Edge And Track (93.5mm,-11.5mm)(99.73mm,-11.5mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.037mil|Location2.X=4942.161mil|Location1.Y=2042.485mil|Location2.Y=2051.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.037mil|Location2.X=4942.161mil|Location1.Y=2042.485mil|Location2.Y=2051.609mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.17mm &lt; 0.2mm) Between Board Edge And Track (93.5mm,-20.505mm)(99.73mm,-20.505mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.037mil|Location2.X=4942.161mil|Location1.Y=2042.485mil|Location2.Y=2051.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.037mil|Location2.X=4942.161mil|Location1.Y=2042.485mil|Location2.Y=2051.609mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.17mm &lt; 0.2mm) Between Board Edge And Track (99.73mm,-20.505mm)(99.73mm,-11.5mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.43mil|Location2.X=4942.554mil|Location1.Y=2475.753mil|Location2.Y=2484.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4933.43mil|Location2.X=4942.554mil|Location1.Y=2475.753mil|Location2.Y=2484.877mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.15mm &lt; 0.2mm) Between Board Edge And Track (99.75mm,-9.5mm)(99.75mm,9mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDC5JPUXQMSPL0EDA1LE1VBZGXD05IU320MOPOIGXZEEUYBEFBMAC"><h2>Waived Violations</h2></a><a name="IDJSQHMJM2XHHOIY5IMBLUUOC3ULB1N11FHHK3I1FNCI5ZKCXV5OTL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3501.868mil|Location2.X=3509.984mil|Location1.Y=4161.158mil|Location2.Y=4166.028mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3501.868mil|Location2.X=3509.984mil|Location1.Y=4161.158mil|Location2.Y=4166.028mil|Absolute=True">Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3527.841mil|Location2.X=3535.633mil|Location1.Y=4145.898mil|Location2.Y=4151.093mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3527.841mil|Location2.X=3535.633mil|Location1.Y=4145.898mil|Location2.Y=4151.093mil|Absolute=True">Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3519.399mil|Location2.X=3526.867mil|Location1.Y=4151.093mil|Location2.Y=4156.288mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3519.399mil|Location2.X=3526.867mil|Location1.Y=4151.093mil|Location2.Y=4156.288mil|Absolute=True">Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3510.634mil|Location2.X=3518.101mil|Location1.Y=4156.288mil|Location2.Y=4161.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3510.634mil|Location2.X=3518.101mil|Location1.Y=4156.288mil|Location2.Y=4161.158mil|Absolute=True">Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3364.209mil|Location2.X=3463.882mil|Location1.Y=4120.574mil|Location2.Y=4256.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3364.209mil|Location2.X=3463.882mil|Location1.Y=4120.574mil|Location2.Y=4256.609mil|Absolute=True">Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3363.235mil|Location2.X=3566.801mil|Location1.Y=4075.77mil|Location2.Y=4253.363mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3363.235mil|Location2.X=3566.801mil|Location1.Y=4075.77mil|Location2.Y=4253.363mil|Absolute=True">Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3479.79mil|Location2.X=3526.542mil|Location1.Y=4184.534mil|Location2.Y=4258.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3479.79mil|Location2.X=3526.542mil|Location1.Y=4184.534mil|Location2.Y=4258.882mil|Absolute=True">Un-Routed Net Constraint: Region (0 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3483.037mil|Location2.X=3504.465mil|Location1.Y=4145.898mil|Location2.Y=4159.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3483.037mil|Location2.X=3504.465mil|Location1.Y=4145.898mil|Location2.Y=4159.859mil|Absolute=True">Un-Routed Net Constraint: Region (1 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3468.752mil|Location2.X=3505.764mil|Location1.Y=4123.496mil|Location2.Y=4148.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3468.752mil|Location2.X=3505.764mil|Location1.Y=4123.496mil|Location2.Y=4148.82mil|Absolute=True">Un-Routed Net Constraint: Region (2 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3499.92mil|Location2.X=3523.62mil|Location1.Y=4136.321mil|Location2.Y=4150.444mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3499.92mil|Location2.X=3523.62mil|Location1.Y=4136.321mil|Location2.Y=4150.444mil|Absolute=True">Un-Routed Net Constraint: Region (3 hole(s)) Bottom Layer [SIG] Dead Copper - Net Not Assigned.</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:03<br>Texts and logos have unassigned nets</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDO0PMDSOCLGNVJYTZSP4IZLXLSOIPYS4HFUUQQPNIGPMBPGMMTKK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Annular Ring (Minimum=0.075mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2320.733mil|Location2.X=2324.936mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2320.733mil|Location2.X=2324.936mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (33.5mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2344.355mil|Location2.X=2348.558mil|Location1.Y=2981.658mil|Location2.Y=2985.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2344.355mil|Location2.X=2348.558mil|Location1.Y=2981.658mil|Location2.Y=2985.861mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (34.1mm,3.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2348.292mil|Location2.X=2352.495mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2348.292mil|Location2.X=2352.495mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (34.2mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2364.04mil|Location2.X=2368.243mil|Location1.Y=2458.036mil|Location2.Y=2462.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2364.04mil|Location2.X=2368.243mil|Location1.Y=2458.036mil|Location2.Y=2462.239mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (34.6mm,-10.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:50:34<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.914mil|Location2.X=2376.117mil|Location1.Y=2981.658mil|Location2.Y=2985.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.914mil|Location2.X=2376.117mil|Location1.Y=2981.658mil|Location2.Y=2985.861mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (34.8mm,3.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2375.851mil|Location2.X=2380.054mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2375.851mil|Location2.X=2380.054mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (34.9mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2395.536mil|Location2.X=2399.739mil|Location1.Y=2965.91mil|Location2.Y=2970.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2395.536mil|Location2.X=2399.739mil|Location1.Y=2965.91mil|Location2.Y=2970.113mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (35.4mm,2.7mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2406.498mil|Location2.X=2410.701mil|Location1.Y=2995.491mil|Location2.Y=2999.694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2406.498mil|Location2.X=2410.701mil|Location1.Y=2995.491mil|Location2.Y=2999.694mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (35.678mm,3.451mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2403.41mil|Location2.X=2407.613mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2403.41mil|Location2.X=2407.613mil|Location1.Y=3170.635mil|Location2.Y=3174.838mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (35.6mm,7.9mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2415.221mil|Location2.X=2419.424mil|Location1.Y=2946.225mil|Location2.Y=2950.428mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2415.221mil|Location2.X=2419.424mil|Location1.Y=2946.225mil|Location2.Y=2950.428mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (35.9mm,2.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.576mil|Location2.X=2432.779mil|Location1.Y=3016.134mil|Location2.Y=3020.337mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.576mil|Location2.X=2432.779mil|Location1.Y=3016.134mil|Location2.Y=3020.337mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (36.239mm,3.976mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2430.97mil|Location2.X=2435.172mil|Location1.Y=3186.383mil|Location2.Y=3190.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2430.97mil|Location2.X=2435.172mil|Location1.Y=3186.383mil|Location2.Y=3190.586mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (36.3mm,8.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2434.907mil|Location2.X=2439.109mil|Location1.Y=2926.54mil|Location2.Y=2930.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2434.907mil|Location2.X=2439.109mil|Location1.Y=2926.54mil|Location2.Y=2930.743mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (36.4mm,1.7mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2450.655mil|Location2.X=2454.857mil|Location1.Y=3036.776mil|Location2.Y=3040.979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2450.655mil|Location2.X=2454.857mil|Location1.Y=3036.776mil|Location2.Y=3040.979mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (36.8mm,4.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2450.655mil|Location2.X=2454.857mil|Location1.Y=3206.068mil|Location2.Y=3210.271mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2450.655mil|Location2.X=2454.857mil|Location1.Y=3206.068mil|Location2.Y=3210.271mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (36.8mm,8.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2470.34mil|Location2.X=2474.542mil|Location1.Y=3056.461mil|Location2.Y=3060.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2470.34mil|Location2.X=2474.542mil|Location1.Y=3056.461mil|Location2.Y=3060.664mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (37.3mm,5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2470.34mil|Location2.X=2474.542mil|Location1.Y=3225.753mil|Location2.Y=3229.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2470.34mil|Location2.X=2474.542mil|Location1.Y=3225.753mil|Location2.Y=3229.956mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (37.3mm,9.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.025mil|Location2.X=2494.227mil|Location1.Y=3076.146mil|Location2.Y=3080.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.025mil|Location2.X=2494.227mil|Location1.Y=3076.146mil|Location2.Y=3080.349mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (37.8mm,5.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.025mil|Location2.X=2494.227mil|Location1.Y=3245.438mil|Location2.Y=3249.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2490.025mil|Location2.X=2494.227mil|Location1.Y=3245.438mil|Location2.Y=3249.641mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (37.8mm,9.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.962mil|Location2.X=2498.164mil|Location1.Y=3339.926mil|Location2.Y=3344.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2493.962mil|Location2.X=2498.164mil|Location1.Y=3339.926mil|Location2.Y=3344.129mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (37.9mm,12.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2505.773mil|Location2.X=2509.975mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2505.773mil|Location2.X=2509.975mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.2mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2509.71mil|Location2.X=2513.912mil|Location1.Y=3265.123mil|Location2.Y=3269.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2509.71mil|Location2.X=2513.912mil|Location1.Y=3265.123mil|Location2.Y=3269.326mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.3mm,10.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2509.71mil|Location2.X=2513.912mil|Location1.Y=3095.831mil|Location2.Y=3100.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2509.71mil|Location2.X=2513.912mil|Location1.Y=3095.831mil|Location2.Y=3100.034mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.3mm,6mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2521.521mil|Location2.X=2525.723mil|Location1.Y=3339.926mil|Location2.Y=3344.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2521.521mil|Location2.X=2525.723mil|Location1.Y=3339.926mil|Location2.Y=3344.129mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.6mm,12.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.395mil|Location2.X=2533.597mil|Location1.Y=3284.808mil|Location2.Y=3289.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.395mil|Location2.X=2533.597mil|Location1.Y=3284.808mil|Location2.Y=3289.011mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.8mm,10.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.395mil|Location2.X=2533.597mil|Location1.Y=3115.517mil|Location2.Y=3119.719mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2529.395mil|Location2.X=2533.597mil|Location1.Y=3115.517mil|Location2.Y=3119.719mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.8mm,6.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2533.332mil|Location2.X=2537.535mil|Location1.Y=2989.532mil|Location2.Y=2993.735mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2533.332mil|Location2.X=2537.535mil|Location1.Y=2989.532mil|Location2.Y=2993.735mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.9mm,3.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2533.332mil|Location2.X=2537.535mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2533.332mil|Location2.X=2537.535mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (38.9mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.08mil|Location2.X=2553.282mil|Location1.Y=3304.493mil|Location2.Y=3308.696mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.08mil|Location2.X=2553.282mil|Location1.Y=3304.493mil|Location2.Y=3308.696mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (39.3mm,11.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.08mil|Location2.X=2553.282mil|Location1.Y=3335.989mil|Location2.Y=3340.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.08mil|Location2.X=2553.282mil|Location1.Y=3335.989mil|Location2.Y=3340.192mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (39.3mm,12.1mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.08mil|Location2.X=2553.282mil|Location1.Y=3135.202mil|Location2.Y=3139.404mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2549.08mil|Location2.X=2553.282mil|Location1.Y=3135.202mil|Location2.Y=3139.404mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (39.3mm,7mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2560.891mil|Location2.X=2565.093mil|Location1.Y=2989.532mil|Location2.Y=2993.735mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2560.891mil|Location2.X=2565.093mil|Location1.Y=2989.532mil|Location2.Y=2993.735mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (39.6mm,3.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2560.891mil|Location2.X=2565.093mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2560.891mil|Location2.X=2565.093mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (39.6mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2568.765mil|Location2.X=2572.968mil|Location1.Y=3351.737mil|Location2.Y=3355.94mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2568.765mil|Location2.X=2572.968mil|Location1.Y=3351.737mil|Location2.Y=3355.94mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (39.8mm,12.5mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2572.702mil|Location2.X=2576.905mil|Location1.Y=3324.178mil|Location2.Y=3328.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2572.702mil|Location2.X=2576.905mil|Location1.Y=3324.178mil|Location2.Y=3328.381mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (39.9mm,11.8mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.576mil|Location2.X=2584.779mil|Location1.Y=3143.076mil|Location2.Y=3147.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.576mil|Location2.X=2584.779mil|Location1.Y=3143.076mil|Location2.Y=3147.278mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (40.1mm,7.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2588.45mil|Location2.X=2592.653mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2588.45mil|Location2.X=2592.653mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (40.3mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2596.324mil|Location2.X=2600.527mil|Location1.Y=3316.304mil|Location2.Y=3320.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2596.324mil|Location2.X=2600.527mil|Location1.Y=3316.304mil|Location2.Y=3320.507mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (40.5mm,11.6mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2596.324mil|Location2.X=2600.527mil|Location1.Y=3343.863mil|Location2.Y=3348.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2596.324mil|Location2.X=2600.527mil|Location1.Y=3343.863mil|Location2.Y=3348.066mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (40.5mm,12.3mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2608.135mil|Location2.X=2612.338mil|Location1.Y=3143.076mil|Location2.Y=3147.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2608.135mil|Location2.X=2612.338mil|Location1.Y=3143.076mil|Location2.Y=3147.278mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (40.8mm,7.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2635.694mil|Location2.X=2639.897mil|Location1.Y=3143.076mil|Location2.Y=3147.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2635.694mil|Location2.X=2639.897mil|Location1.Y=3143.076mil|Location2.Y=3147.278mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (41.5mm,7.2mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2643.568mil|Location2.X=2647.771mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2643.568mil|Location2.X=2647.771mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (41.7mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2616.009mil|Location2.X=2620.212mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2616.009mil|Location2.X=2620.212mil|Location1.Y=3017.091mil|Location2.Y=3021.294mil|Absolute=True">Minimum Annular Ring: (0.074999mm (2.9527mil) &lt; 0.075001mm (2.9528mil)) Via (41mm,4mm) from Top Layer [SIG] to Bottom Layer [SIG] (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:36:49<br>Rounding error</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDTNNQZ1Z3UHWWMFEVNXURK1VHFED0O35QJDWDH2OHXN42ALXEHMWM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Solder Mask Sliver (Gap=0.13mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.08mil|Location2.X=3522.982mil|Location1.Y=4152.706mil|Location2.Y=4160.249mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.08mil|Location2.X=3522.982mil|Location1.Y=4152.706mil|Location2.Y=4160.249mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.091mm &lt; 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.091mm]</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:03<br>Logo</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3524.17mil|Location2.X=3531.714mil|Location1.Y=4147.909mil|Location2.Y=4155.524mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3524.17mil|Location2.X=3531.714mil|Location1.Y=4147.909mil|Location2.Y=4155.524mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.093mm &lt; 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.093mm]</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:03<br>Logo</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3507.744mil|Location2.X=3516.631mil|Location1.Y=4158.432mil|Location2.Y=4165.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3507.744mil|Location2.X=3516.631mil|Location1.Y=4158.432mil|Location2.Y=4165.87mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.097mm]</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:03<br>Logo</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3514.836mil|Location2.X=3522.485mil|Location1.Y=4146.364mil|Location2.Y=4153.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3514.836mil|Location2.X=3522.485mil|Location1.Y=4146.364mil|Location2.Y=4153.871mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.128mm &lt; 0.13mm) Between Region (0 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.128mm]</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:03<br>Logo</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3499.011mil|Location2.X=3507.958mil|Location1.Y=4144.43mil|Location2.Y=4151.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3499.011mil|Location2.X=3507.958mil|Location1.Y=4144.43mil|Location2.Y=4151.861mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.119mm &lt; 0.13mm) Between Region (1 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.119mm]</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:03<br>Logo</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3502.904mil|Location2.X=3510.519mil|Location1.Y=4130.337mil|Location2.Y=4137.881mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3502.904mil|Location2.X=3510.519mil|Location1.Y=4130.337mil|Location2.Y=4137.881mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.128mm &lt; 0.13mm) Between Region (2 hole(s)) Bottom Solder And Region (3 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.128mm]</acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:03<br>Logo</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDMHFVPK51LKLQHXQMERI1253DHH2CNVNVY51UHWKNAN0AGC44WC2E"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True">Net Antennae: Via (3.3mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True">Net Antennae: Via (3.3mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True">Net Antennae: Via (3.3mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1114.61mil|Location2.X=1161.597mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True">Net Antennae: Via (3.3mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True">Net Antennae: Via (6.7mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True">Net Antennae: Via (6.7mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True">Net Antennae: Via (6.7mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1248.468mil|Location2.X=1295.455mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True">Net Antennae: Via (6.7mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True">Net Antennae: Via (93.3mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True">Net Antennae: Via (93.3mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True">Net Antennae: Via (93.3mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4657.917mil|Location2.X=4704.904mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True">Net Antennae: Via (93.3mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=4146.106mil|Location2.Y=4219.336mil|Absolute=True">Net Antennae: Via (96.7mm,33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=1524.059mil|Location2.Y=1597.288mil|Absolute=True">Net Antennae: Via (96.7mm,-33.3mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=4279.965mil|Location2.Y=4353.194mil|Absolute=True">Net Antennae: Via (96.7mm,36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4791.776mil|Location2.X=4838.762mil|Location1.Y=1390.201mil|Location2.Y=1463.43mil|Absolute=True">Net Antennae: Via (96.7mm,-36.7mm) from Top Layer [SIG] to Bottom Layer [SIG] </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:51:50<br>Optics in mounting holes</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID3BRTCHVAVV2WLOWNPEDZA3LRWEEWBJDS2FY5TOJ5A4G2L0QIZJRD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2221.285mil|Location2.Y=2227.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2221.285mil|Location2.Y=2227.534mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (100mm,-20.505mm)(100mm,-11.495mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.886mil|Location2.X=4945.135mil|Location1.Y=1989.1mil|Location2.Y=1995.35mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.886mil|Location2.X=4945.135mil|Location1.Y=1989.1mil|Location2.Y=1995.35mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (100mm,-22mm)(100mm,-21.795mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5609.078mil|Location2.X=5615.328mil|Location1.Y=2851.206mil|Location2.Y=2857.455mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5609.078mil|Location2.X=5615.328mil|Location1.Y=2851.206mil|Location2.Y=2857.455mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (117.05mm,-7.7mm)(117.05mm,7.7mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5275.579mil|Location2.X=5281.828mil|Location1.Y=3154.356mil|Location2.Y=3160.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5275.579mil|Location2.X=5281.828mil|Location1.Y=3154.356mil|Location2.Y=3160.605mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (81.05mm,7.7mm)(117.05mm,7.7mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5275.579mil|Location2.X=5281.828mil|Location1.Y=2548.056mil|Location2.Y=2554.305mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5275.579mil|Location2.X=5281.828mil|Location1.Y=2548.056mil|Location2.Y=2554.305mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (81.05mm,-7.7mm)(117.05mm,-7.7mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2398.647mil|Location2.Y=2404.896mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2398.647mil|Location2.Y=2404.896mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (90.73mm,-11.495mm)(100mm,-11.495mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2043.923mil|Location2.Y=2050.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.951mil|Location2.X=4946.2mil|Location1.Y=2043.923mil|Location2.Y=2050.172mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (90.73mm,-20.505mm)(100mm,-20.505mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.886mil|Location2.X=4945.135mil|Location1.Y=1993.577mil|Location2.Y=1999.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.886mil|Location2.X=4945.135mil|Location1.Y=1993.577mil|Location2.Y=1999.827mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (98.679mm,-20.474mm)(100mm,-21.795mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.645mil|Location2.X=4944.894mil|Location1.Y=2427.796mil|Location2.Y=2434.046mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Backend\Backend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.645mil|Location2.X=4944.894mil|Location1.Y=2427.796mil|Location2.Y=2434.046mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (98.734mm,-9.508mm)(99.988mm,-10.762mm) on Top Overlay </acronym></a><br>Waived by Tobias Wirth at 15.10.2023 12:52:16<br>Intentional clearance violatoins of IO connectors</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

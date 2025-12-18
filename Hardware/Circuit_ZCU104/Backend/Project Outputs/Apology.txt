@@ -1,0 +1,24 @@
+Dear JLCPCB Team,
+
+With this letter I am writing to offer my sincere apologies for the recent oversight in our PCB production process.
+
+After ordering, it has come to my attention that there was an error in the PCB production file submitted for our recent order. 
+Regrettably, the file provided by my student did not undergo the necessary design rule check, and I failed to verify that it was the correct version before submitting it to you. 
+This lapse in oversight led to undesired consequences and disrupted your production process.
+
+I am sorry that this mistake on our part has inconvenienced your operations, and I take full responsibility for the oversight. 
+It was a misjudgment on my end to place undue trust without thoroughly verifying the essential aspects of the production file.
+
+I am now taking immediate steps to rectify the situation. We will address the issue and ensure that such errors are prevented in the future. 
+I will be instituting stricter verification protocols and reinforcing the importance of thorough checks before any file submission.
+
+I deeply value your professionalism and quality service you provide. 
+We highly appreciate your understanding and patience as we resolve this matter.
+
+Once again, I sincerely apologize for any inconvenience caused. 
+If there is anything further I can do to rectify this situation, please do not hesitate to contact me.
+
+Thank you for your understanding and cooperation.
+
+With my best regards,
+Tobias Wirth

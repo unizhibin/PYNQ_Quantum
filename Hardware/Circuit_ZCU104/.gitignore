@@ -1,0 +1,19 @@
+# Specify filepatterns you want git to ignore.
+
+# Skip directories
+**/History/
+**/__Previews/
+**/.svn/
+**/Project Logs*/
+#**/Project Outputs*/
+**/VersionControl/
+
+# Skip files
+*~$*
+*.PrjPCBStructure
+*.SchDocPreview
+*.PcbDocPreview
+*.PrjPcbStructure
+*.PrjMbdStructure
+*.LOG
+*.Zip

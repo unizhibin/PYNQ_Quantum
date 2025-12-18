@@ -1,0 +1,416 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">25.09.2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:09:13</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc" class="file"><acronym title="C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc">C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">24</td></tr>
+</table>
+</td>
+</table><a name="ID2MJOVI5HIKKYFAUCT3AWQ5PIPXHH1L4CBL44FN0ZCFWEAKRBWKB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAKHRDCK1F2BOKWF1O1JR02VPPFAJXOUSSKNFNKG1LQGRXGQP2F0P">Clearance Constraint (Gap=0.102mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLJ0KNOW5KOB0IAGJZ3YVGYKK2PYLNF4J5S1RXWHEGEVITQRUVQDM">Clearance Constraint (Gap=0.102mm) (InNetClass('IQ')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEEZLWPINRBKMPFNP2ZVT3SDI4GEVKPVFCB5INWAP5RK32RXABM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXZURKVJ4HDV4NYANP3RGNFYN2BGO1QZFZ0LTRDL4AK1VHEYBHUVL">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPZTLOTBZHL0LM1FS0AJ3U4L4QF0Q3JHKD23CJDDJ5OES15QPY5WN">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5BBNCBFICYCKMXB04BSJSVLKGNYNSJQVLQDDPDBHWVMXJ1GHRIZE">Width Constraint (Min=0.09mm) (Max=1816.048mm) (Preferred=0.102mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDMYXHF4GPG05NJH40SRVG0IQMGCRJWIL0HHP31BTVV2DRD03HQJB">Power Plane Connect Rule(Relief Connect )(Expansion=0.3mm) (Conductor Width=0.102mm) (Air Gap=0.102mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXUC4NLOT2QCFM4XO2O3WSMJATLWNQDWKMWBCUTLFPRVIJAQEJERO">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPR4WBQSVX2RXFNWDTQSM1HBCQFY402FIQPTEH5NPE4HIKV1OOAX">Minimum Annular Ring (Minimum=0.13mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID51LTRBOEIUXIKVVQUY0TYVKIJODKHNKVAX1QGBD0DJIHBZ3HMDF">Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4PDXJK4OKOC2IQBTAIF0XKJVYHBELAGUICF4ZHFJQWSUXPMZTL2F">Hole To Hole Clearance (Gap=0.5mm) (All),(All)</a></td>
+<td class="column2">24</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSRGM1MDUHOL5EB2FWFDJLMZCFN0Y04FF0DYE0GO2MZHKE1L5MDXP">Minimum Solder Mask Sliver (Gap=0.13mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMWI2B5QNXLF3CUC002AP0ACAUK0SVC04IHAU4MKMRPWEZHJHPXSM">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDP1UNMAV0ZHIVI5NA44SK0BXHHP4JSE3AJSMOSNDRMPNIXAONGXGG">Silk to Silk (Clearance=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCMMPFLP4LY5WLLOMQC3KDYCEZMMTXWCKB01XBFK2GPFKAZKXOXEK">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLLRA00NDMOLIEXMLKDPB2VOWSKWMOJL2SITG4PZLWDBED25DMAL">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5HSOBWKHNOV0HENPXXY4G55O2IE1J55CBGWUYEM3PDSR5MSU3FWE">Height Constraint (Min=0mm) (Max=1816.048mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">24</td>
+</tr>
+</table><br><a name="ID4PDXJK4OKOC2IQBTAIF0XKJVYHBELAGUICF4ZHFJQWSUXPMZTL2F"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole To Hole Clearance (Gap=0.5mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.288mil|Location2.X=2963.223mil|Location1.Y=2341.894mil|Location2.Y=2362.829mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.288mil|Location2.X=2963.223mil|Location1.Y=2341.894mil|Location2.Y=2362.829mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (0mm,-12.4mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.288mil|Location2.X=2963.223mil|Location1.Y=2180.477mil|Location2.Y=2201.412mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.288mil|Location2.X=2963.223mil|Location1.Y=2180.477mil|Location2.Y=2201.412mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (0mm,-17.2mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.416mil|Location2.X=3020.351mil|Location1.Y=2318.313mil|Location2.Y=2339.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.416mil|Location2.X=3020.351mil|Location1.Y=2318.313mil|Location2.Y=2339.248mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (1.7mm,-13.1mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2885.161mil|Location2.X=2906.096mil|Location1.Y=2318.313mil|Location2.Y=2339.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2885.161mil|Location2.X=2906.096mil|Location1.Y=2318.313mil|Location2.Y=2339.248mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (-1.7mm,-13.1mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.416mil|Location2.X=3020.351mil|Location1.Y=2204.058mil|Location2.Y=2224.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.416mil|Location2.X=3020.351mil|Location1.Y=2204.058mil|Location2.Y=2224.993mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (1.7mm,-16.5mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2885.161mil|Location2.X=2906.096mil|Location1.Y=2204.058mil|Location2.Y=2224.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2885.161mil|Location2.X=2906.096mil|Location1.Y=2204.058mil|Location2.Y=2224.993mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (-1.7mm,-16.5mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3022.997mil|Location2.X=3043.932mil|Location1.Y=2261.186mil|Location2.Y=2282.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3022.997mil|Location2.X=3043.932mil|Location1.Y=2261.186mil|Location2.Y=2282.121mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (2.4mm,-14.8mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2861.58mil|Location2.X=2882.515mil|Location1.Y=2261.186mil|Location2.Y=2282.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2861.58mil|Location2.X=2882.515mil|Location1.Y=2261.186mil|Location2.Y=2282.121mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(0mm,-14.8mm) on Multi-Layer And Via (-2.4mm,-14.8mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3668.666mil|Location2.X=3689.601mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3668.666mil|Location2.X=3689.601mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (18.1mm,35.5mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.91mil|Location2.X=2236.845mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2215.91mil|Location2.X=2236.845mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-18.1mm,35.5mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3692.247mil|Location2.X=3713.182mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3692.247mil|Location2.X=3713.182mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (18.8mm,33.8mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2192.329mil|Location2.X=2213.264mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2192.329mil|Location2.X=2213.264mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-18.8mm,33.8mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3692.247mil|Location2.X=3713.182mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3692.247mil|Location2.X=3713.182mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (18.8mm,37.2mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2192.329mil|Location2.X=2213.264mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2192.329mil|Location2.X=2213.264mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-18.8mm,37.2mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3749.375mil|Location2.X=3770.31mil|Location1.Y=4160.792mil|Location2.Y=4181.727mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3749.375mil|Location2.X=3770.31mil|Location1.Y=4160.792mil|Location2.Y=4181.727mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (20.5mm,33.1mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2135.202mil|Location2.X=2156.137mil|Location1.Y=4160.792mil|Location2.Y=4181.727mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2135.202mil|Location2.X=2156.137mil|Location1.Y=4160.792mil|Location2.Y=4181.727mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-20.5mm,33.1mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3749.375mil|Location2.X=3770.31mil|Location1.Y=4322.21mil|Location2.Y=4343.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3749.375mil|Location2.X=3770.31mil|Location1.Y=4322.21mil|Location2.Y=4343.145mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (20.5mm,37.9mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2135.202mil|Location2.X=2156.137mil|Location1.Y=4322.21mil|Location2.Y=4343.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2135.202mil|Location2.X=2156.137mil|Location1.Y=4322.21mil|Location2.Y=4343.145mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-20.5mm,37.9mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.503mil|Location2.X=3827.438mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.503mil|Location2.X=3827.438mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (22.2mm,33.8mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2078.074mil|Location2.X=2099.009mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2078.074mil|Location2.X=2099.009mil|Location1.Y=4184.373mil|Location2.Y=4205.308mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-22.2mm,33.8mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.503mil|Location2.X=3827.438mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3806.503mil|Location2.X=3827.438mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (22.2mm,37.2mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2078.074mil|Location2.X=2099.009mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2078.074mil|Location2.X=2099.009mil|Location1.Y=4298.628mil|Location2.Y=4319.564mil|Absolute=True">Hole To Hole Clearance Constraint: (0.404mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-22.2mm,37.2mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3830.084mil|Location2.X=3851.019mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3830.084mil|Location2.X=3851.019mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(20.5mm,35.5mm) on Multi-Layer And Via (22.9mm,35.5mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2054.493mil|Location2.X=2075.428mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ac142444\Documents\Altium\AUS_NMR_System\Frontend_HB\Frontend.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2054.493mil|Location2.X=2075.428mil|Location1.Y=4241.501mil|Location2.Y=4262.436mil|Absolute=True">Hole To Hole Clearance Constraint: (0.4mm &lt; 0.5mm) Between Pad Free-0(-20.5mm,35.5mm) on Multi-Layer And Via (-22.9mm,35.5mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

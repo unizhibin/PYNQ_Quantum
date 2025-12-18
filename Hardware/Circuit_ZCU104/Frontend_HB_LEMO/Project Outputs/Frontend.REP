@@ -1,0 +1,84 @@
+*************************************************************
+FileName = Frontend.PcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\profile
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\stephdr
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\dielectric_1\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\dielectric_1\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\core\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\core\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\dielectric_2\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\dielectric_2\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_surface_finish\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_surface_finish\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_surface_finish\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_surface_finish\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_paste\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_paste\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_overlay\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_overlay\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\drill_plated_bottom_layer-top_layer\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\drill_plated_bottom_layer-top_layer\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\drill_plated_bottom_layer-top_layer\tools
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_solder\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_solder\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_overlay\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_overlay\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_solder\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_solder\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_paste\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_paste\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\mid_layer_1\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\mid_layer_1\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\mid_layer_2\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\mid_layer_2\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_layer\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\bottom_layer\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_layer\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\top_layer\attrlist
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\steps\pcb\eda\data
+
+Generated File : C:\Users\Yitian Chen\OneDrive\AS-Datei\Master Thesis\Altium_WS\AUS_NMR_System-main\Frontend_HB_LEMO\Project Outputs\odb\matrix\matrix
+
