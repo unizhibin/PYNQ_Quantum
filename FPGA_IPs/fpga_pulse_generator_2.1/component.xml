@@ -1,0 +1,1560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>uni-stuttgart.de</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>fpga_pulse_generator</spirit:name>
+  <spirit:version>2.1</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="S00_AXI"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>WIZ_DATA_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>WIZ_NUM_REG</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_NUM_REG" spirit:minimum="4" spirit:maximum="512" spirit:rangeType="long">256</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.SUPPORTS_NARROW_BURST" spirit:choiceRef="choice_pairs_ce1226b1">0</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_BUSIF">S00_AXI</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_RESET">s00_axi_aresetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:description>100000000</spirit:description>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>M_AXIS_CONFIG_CH0</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ov_config_dds_data_ch0</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_config_tvalid_ch0</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXIS_CONFIG_CH0.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>M_AXIS_CONFIG_CH1</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ov_config_dds_data_ch1</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_config_tvalid_ch1</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXIS_CONFIG_CH1.NUM_READ_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXIS_CONFIG_CH1.NUM_WRITE_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXIS_CONFIG_CH1.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>o_dds_rstn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_dds_rstn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.O_DDS_RSTN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>M_AXIS_GRADIENT</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_gradient_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ov_gradient_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_Hz</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXIS_GRADIENT.FREQ_Hz"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>S00_AXI_reg</spirit:name>
+        <spirit:baseAddress spirit:format="long" spirit:resolve="user">0</spirit:baseAddress>
+        <spirit:range spirit:format="long">4096</spirit:range>
+        <spirit:width spirit:format="long">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>OFFSET_BASE_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_BASE_PARAM">C_S00_AXI_BASEADDR</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>OFFSET_HIGH_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_HIGH_PARAM">C_S00_AXI_HIGHADDR</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesis</spirit:name>
+        <spirit:displayName>VHDL Synthesis</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>fpga_pulse_generator_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>cce87d56</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlbehavioralsimulation</spirit:name>
+        <spirit:displayName>VHDL Simulation</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>fpga_pulse_generator_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>cce87d56</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_softwaredriver</spirit:name>
+        <spirit:displayName>Software Driver</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:sw.driver</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>43f36e7b</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>12acc303</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>16328387</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>fpga_pulse_gen_if_top_tb</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>bbe30092</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>o_tx_pulse</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_rx_pulse</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ov_config_dds_data_ch0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">63</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_config_tvalid_ch0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ov_config_dds_data_ch1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">63</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_config_tvalid_ch1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_dds_rstn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_mux_ch</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_pulse_gen_led</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ov_gradient_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((6 * spirit:decode(id(&apos;MODELPARAM_VALUE.C_GRADIENT_DAC_WIDTH&apos;))) - 1)">71</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_gradient_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">9</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">9</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI data bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:order="3" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI address bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">10</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_GRADIENT_DAC_WIDTH</spirit:name>
+        <spirit:displayName>C Gradient Dac Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GRADIENT_DAC_WIDTH">12</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_6fc15197</spirit:name>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_ce1226b1</spirit:name>
+      <spirit:enumeration spirit:text="true">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="false">0</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen_pkg.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_counter.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen_cu.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_timer.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_mem.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen_top.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_pulse_generator_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_pulse_generator_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_a7cc2662</spirit:userFileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen_pkg.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_counter.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen_cu.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_timer.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_mem.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen_top.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_pulse_generator_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fpga_pulse_generator_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>drivers/fpga_pulse_generator_v1_0/data/fpga_pulse_generator.mdd</spirit:name>
+        <spirit:userFileType>mdd</spirit:userFileType>
+        <spirit:userFileType>driver_mdd</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_pulse_generator_v1_0/data/fpga_pulse_generator.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>driver_tcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_pulse_generator_v1_0/src/Makefile</spirit:name>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_pulse_generator_v1_0/src/fpga_pulse_generator.h</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_pulse_generator_v1_0/src/fpga_pulse_generator.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/fpga_pulse_generator_v1_0/src/fpga_pulse_generator_selftest.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/fpga_pulse_generator_v2_1.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_12acc303</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/fpga_pulse_gen_if_top_tb.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>NMR pulse generator</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI data bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197" spirit:order="3">32</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_DATA_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI address bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">10</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_ADDR_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_BASEADDR</spirit:name>
+      <spirit:displayName>C S00 AXI BASEADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_BASEADDR" spirit:order="5" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_BASEADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_HIGHADDR</spirit:name>
+      <spirit:displayName>C S00 AXI HIGHADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_HIGHADDR" spirit:order="6" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_HIGHADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">fpga_pulse_generator_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_GRADIENT_DAC_WIDTH</spirit:name>
+      <spirit:displayName>C Gradient Dac Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_GRADIENT_DAC_WIDTH">12</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">versal</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">virtexuplus58g</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">akintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Beta">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>fpga_pulse_generator_v2.1</xilinx:displayName>
+      <xilinx:coreRevision>1</xilinx:coreRevision>
+      <xilinx:upgrades>
+        <xilinx:canUpgradeFrom>uni-stuttgart.de:user:fpga_pulse_generator:1.0</xilinx:canUpgradeFrom>
+      </xilinx:upgrades>
+      <xilinx:coreCreationDateTime>2025-12-28T19:17:56Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7428adf1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d65bba0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b8295ec_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1045e522_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76c084d0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@957ef16_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a64eecd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6519714f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f6ac9e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e185539_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@95fbe6f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13dd26e1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@317ab097_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ce98957_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@729803a2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@739a9ecb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@428408ce_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@308025a4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ab7b69c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bf6c3e9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cc767d5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33bb86a9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ca4a41c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20636187_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74cb9ca6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e334fb0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c7bfcde_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ebdc3c2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e9e343b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3119927a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42438a6d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b483556_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e9622c3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@755e97e7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53ad877d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47ec4e8c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14728a9f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7143f208_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d5929a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a44465d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@314dda1a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f8bd242_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47895f0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a74cbe9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21163417_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fcd19e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ce51b81_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46da48c9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d75b273_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a89bd2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@321d3b8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a9f4b23_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24d31fcf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@375fd192_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62fbbc6f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@227d126e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f990c8c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fad9b34_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61669964_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2df28e1e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5afa8a91_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/FPGA/Zhibin_ip/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@158b3016_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/FPGA/Zhibin_ip/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f068556_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/FPGA/Zhibin_ip/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67291937_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/FPGA/Zhibin_ip/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f8de24a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/FPGA/Zhibin_ip/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@720180bb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/FPGA/Zhibin_ip/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@612a3c83_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/FPGA/Zhibin_ip/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7913ccbb_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d283ef_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@375f2b02_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11c2f4c3_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ba82fe5_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e3fdd61_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d25925c_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f79e27f_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dfc7663_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a119302_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@610c859f_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1efcf709_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e391617_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ac9e2a9_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48a73a65_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74039080_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40acf3b3_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a04682a_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c4152c4_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e8a9e26_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5360c8c5_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d1d1855_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f71b5dc_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38c12652_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ef2b869_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dff7e4e_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64683cdc_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c03625a_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41f63f6c_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e22e97e_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49bda2b8_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64adcb44_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f15c376_ARCHIVE_LOCATION">m:/FPGA_IP/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@656e8b93_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fb0078c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bc23cbd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@90e8549_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@796565c3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21b4d08f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e1600b4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c064a31_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13f80ccd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67148084_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5400ecc7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ba9e706_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f5088c1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e552750_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58df8306_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24781894_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@699c9921_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4962146b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@713881fb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@662f241c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49251d4c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75cdee8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21e8efde_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@175afbac_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53b53d6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b796f73_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e115d35_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a31ee14_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d3dbde9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ea636e4_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a99af0e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c00b9a8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69207b6c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77a25da3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dc86cf8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@660d97c8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46df3205_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73c91bbf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ed7fdec_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29e4e734_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@304cdef9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2333e5ee_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4535b35c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16ce26a1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@385fc4ad_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33ae99d0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d557ac8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e1a5e08_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11722498_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a9cd856_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d5be174_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@246905c6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1eb09e67_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d5eca52_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b76282f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1823e612_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44db70a9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@789c1917_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@209e0ae9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63ca7ff3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45ec8ce8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dabb3f1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@608f6425_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@94c8a45_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cc7c92e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19aa8fed_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@735ae51c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@424a9f18_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1805eceb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57a00358_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79c9bf21_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18fb57db_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54905e48_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45274f49_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2156641d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38626c71_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1715cb20_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d390efc_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68415846_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@354acff5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4783b344_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a2ad404_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5af2de5c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30369dcc_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27debf00_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@755a5921_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cac04c8_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ec6d465_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b024c09_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4583741b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55c91b78_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c8556c9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53b06f72_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22e0035c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61b11c8a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32421d7f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fecef21_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@198521c0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3929c3c2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ab87c18_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e9370c7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c867441_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fc8af05_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5eabcab5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1160db70_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d2c2aa3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fb4ca56_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4091cf74_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bdcc3ad_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c2b3ad5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73ac88fe_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5022ca3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@375bf4e5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b1a6fa7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28264d19_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@aa79907_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dc5e3cf_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35e251dd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e9c68dd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28bcee28_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bac5d38_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6af1cf9f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@330799f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d55c519_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33db3530_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@282e0f43_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1432e513_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62234d1f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39115a46_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@372b95bc_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51e482ec_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6780e3ea_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2161be43_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f2e4118_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74ea8ead_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38f886c0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fd2149a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6deb95dd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13f7b091_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21b8825b_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c30e647_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@639fd13a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@249e27b3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bbaeed1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@315e9512_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3718055f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ad0ff74_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68982dc9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bd21a2e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@515ba060_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@180bcd7c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a9ce2fd_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55935a05_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cb8be82_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29d13ae2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1670b988_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4794c63_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cd76ceb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dc54928_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34b559a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6da0680_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@536e13fa_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41464cee_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57d99c94_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62c5469d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1808c7f2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c08933a_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@708c6fe6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f420b93_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b093e5e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12d428a9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46593214_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c87a1eb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f372439_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@543ca26c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38c9cf19_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@122fc769_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e91fac_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36c3d4f2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@395d2c7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d057239_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@402600d0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@449ed69e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fd39b9d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2da3b795_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4879a669_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ab4e50c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e55ed41_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b00f336_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15912ef_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56997898_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fcde1d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@528859d2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ceb6d14_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28ef19d7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34c6bdce_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bbe6bcb_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2527284e_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73b4b858_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@213cafc3_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c111119_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62a0ca4d_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@886d4d6_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1654fd6c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57e32480_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41a3ee37_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64aeae89_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f7bc754_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@628399b7_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a11b1ad_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ea04caa_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fb83ca2_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fd195d5_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c46ad2c_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34d8b4e9_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b27a55f_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bef2b17_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/Github/NMR-spectrometer/IP_core/fpga_pulse_generator_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2023.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="98fee2cf"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="e64cb679"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="ae97fe38"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="44ca4d67"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="06f5bc05"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
