@@ -28,6 +28,13 @@
 -- Description:
 -- 1. Fixed repetition state machine to ensure no pulse is skipped during last cycle.
 -- 2. Enhanced gradient sweep control to support positive and negative slopes.
+-- Revision v2.1.1
+-- Date: 2025/01/06
+-- Description: 
+-- 1. Spotted a bug: gradient is not working during cycle, Gradient_T_valid keeps low.
+-- 2. Restored the logic structure of previous CU version. Only modified the condition checking 
+--    before it exit to the last_s state.
+-- 3. Effect: it seems to perform ideally during simulation. 
 ----------------------------------------------------------------------------------
 
 
@@ -313,47 +320,44 @@ begin
 			
 							END IF;
 							
--- Rev 2.1 
+-- Rev 2.1.1 
 					WHEN repetition_s =>
-					
-							o_timer_en <= '1';
-							
-							-- FIX: State transition only when the CURRENT section is finishing, so no pulse will be skipped.
-							IF i_timer_pre_done = '1' THEN
-								
-								-- Check if we are at the very last section of the loop (e.g., Section 11)
-								IF (sel_section = end_repeat_pointer) THEN
-									
-									-- Check cycle counter if we are at the last cycle
-									IF (i_pre_cycle_repetition_done = '1') THEN 
-										-- Counter says 1. We just finished the last cycle. EXIT.
-										sel_section 	<= sel_section + 1;
-										state 			<= last_s;
-									ELSE
-										-- Counter says >1. We must run again. LOOP BACK.
-										sel_section 	<= start_repeat_pointer;
-										state 			<= repetition_s;
-									END IF;
-									
-								ELSE
-									-- We are in the middle of a loop (e.g., Section 1, 2...). Just go to the next section.
-									sel_section 	<= sel_section + 1;
-									state 			<= repetition_s;
+    
+						o_timer_en <= '1';
+		
+						IF (d1_pre_cycle_repetition_done = '1') AND (i_cycle_repetition_done= '1')  THEN
+							sel_section     <= end_repeat_pointer + 1;
+						ELSE    
+							IF i_timer_pre_done = '1'  THEN
+								IF (sel_section < end_repeat_pointer) THEN
+									sel_section     <= sel_section + 1;
+								ELSIF (i_pre_cycle_repetition_done = '0') THEN 
+									sel_section     <= start_repeat_pointer;
 								END IF;
-								
-								-- CRITICAL TIMING FIX:
-								-- We do NOT set o_timer_load_en <= '1' here.
-								-- We rely on the Timer's auto-reload (d1_timer_data=1) feature.
-								-- This gives the Memory 1 full clock cycle to update the data 
-								-- before the Timer latches it, ensuring perfect timing.
-								o_timer_load_en <= '0';
-								
 							ELSE
-								-- Timer is still running in the middle of a pulse. Do nothing.
-								sel_section 	<= sel_section;
-								state 			<= repetition_s;
-								o_timer_load_en <= '0';
+								sel_section     <= sel_section;
 							END IF;
+						END IF;
+
+						-- Original Bug: IF (i_pre_cycle_repetition_done = '1') THEN ...
+						-- Fix: Added conditions to ensure we only exit when the LOOP ends and the TIMER ends.
+						-- Verfication: Gradient valid signal is correctly cycling during repetition.
+						IF (i_pre_cycle_repetition_done = '1') AND (sel_section = end_repeat_pointer) AND (i_timer_pre_done = '1') THEN
+							sel_section     <= sel_section + 1;                            
+							state           <= last_s;
+						ELSE
+							state           <= repetition_s;
+						END IF;
+
+						-- This part was fixed.
+						IF i_timer_done = '1' THEN
+							mux_ch                          <= iv_set_mux(0);                            
+							resetn_dds                      <= iv_set_resetn_dds;                            
+							config_tvalid_ch0               <= '1';
+							config_tvalid_ch1               <= '1';
+							gradient_tvalid                 <= '1';
+						END IF;
+
 
 					WHEN last_s =>	
 						
