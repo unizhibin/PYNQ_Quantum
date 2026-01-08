@@ -1222,11 +1222,11 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>fpga_pulse_generator_v2.1</xilinx:displayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>uni-stuttgart.de:user:fpga_pulse_generator:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2026-01-06T01:27:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2026-01-07T13:56:22Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7428adf1_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@d65bba0_ARCHIVE_LOCATION">c:/Users/ac138004/Desktop/new_ip/ip_repo/fpga_pulse_generator_1.0</xilinx:tag>
