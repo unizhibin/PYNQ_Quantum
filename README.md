@@ -35,5 +35,5 @@ https://youtu.be/D55JbZ45ar8
 ![history-full](./Gallery/pynq_Hardware_Family.jpg)
 
 **Information & Version Update:** 
-Version 2.1.1 — Pulse generator; turbo sequence bug fixed.
-![history-full](./Gallery/TB_v2s2[implementedTSE].jpg)
+Version 2.1.1 — Pulse generator; turbo spin echo (TSE) bug fixed.
+![history-full](./Gallery/TB_v2s2[implementedTSE].png)
