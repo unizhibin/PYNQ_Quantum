@@ -1,0 +1,1 @@
+{"pll_en": 1, "gain_flag": 0, "mixer_flag": 0, "prescaler_pll": 2, "divider_pll": 0, "pre_tx": 3, "tx_cnt": 100, "hs_p": 9, "ls_p": 9, "hs_n": 9, "ls_n": 9, "comp_p": 9, "comp_n": 9, "delay_p": 0, "delay_n": 0}
