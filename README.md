@@ -39,4 +39,4 @@ Version 2.1.1 — Pulse generator; turbo spin echo (TSE) bug fixed.
 ![history-full](./Gallery/TB_v2s2[implementedTSE].png)
 
 23.01.2026
-Upload the complete control code and the GUI to the PS side (Jupyter Notebook) from Yitian check by Zhibin.
+Upload all PS-side (Jupyter Notebook) control code IP Register Interface command and the GUI from Yitian check by Zhibin.
