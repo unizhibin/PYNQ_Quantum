@@ -35,6 +35,18 @@ https://youtu.be/D55JbZ45ar8
 ![history-full](./Gallery/pynq_Hardware_Family.jpg)
 
 **Information & Version Update:** 
+PYNQ Quantum Kria phased array update! Full system integration, including magnet, iron yoke, FPGA, and PCB stack:
+![System Integration](./system.jpg)
+
+PYNQ Quantum Kria phased array update! Kria K26 SOM–based digital control and processing platform:
+![Kria K26 SOM](./Kria.jpg)
+
+PYNQ Quantum Kria phased array update! Analog and driver circuitry, including high-voltage NMR transceiver, LNA, and power regulation:  
+![Analog Frontend](./sensor.jpg)
+
+PYNQ Quantum Kria phased array update! Magnetic field simulation and coil design:
+![Field Simulation](./field.jpg)
+
 Version 2.1.1 — Pulse generator; turbo spin echo (TSE) bug fixed.
 ![history-full](./Gallery/TB_v2s2[implementedTSE].png)
 
