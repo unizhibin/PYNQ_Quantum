@@ -47,7 +47,7 @@ PYNQ Quantum Kria phased array update! Analog and driver circuitry, including hi
 PYNQ Quantum Kria phased array update! Magnetic field simulation and coil design:
 ![Field Simulation](./Gallery/field.jpg)
 
-Version 2.1.1 — Pulse generator; turbo spin echo (TSE) bug fixed.
+PYNQ - MRI Version 2.1.1 — Pulse generator; turbo spin echo (TSE) bug fixed.
 ![history-full](./Gallery/TB_v2s2[implementedTSE].png)
 
 23.01.2026
