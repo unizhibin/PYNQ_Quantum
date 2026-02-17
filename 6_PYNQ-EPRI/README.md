@@ -1,3 +1,3 @@
-<h2>EPRI Documentation</h2>
+## 📄 EPRI Documentation
 
-<embed src="EPRI.pdf" width="100%" height="800px" type="application/pdf">
+[Open EPRI.pdf](EPRI.pdf)
