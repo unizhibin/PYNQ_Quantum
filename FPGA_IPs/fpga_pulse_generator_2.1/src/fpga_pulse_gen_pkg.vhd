@@ -34,7 +34,7 @@ PACKAGE fpga_pulse_gen_pkg IS
 -- Number of configuration xilinx DDS
 	CONSTANT C_NR_DDS_XILINX 	  : integer := 2;
 -- Determines the depth of the memories	
-	CONSTANT C_MEM_ADDR_WIDTH     : integer := 8;  
+	CONSTANT C_MEM_ADDR_WIDTH     : integer := 6;  
 -- Number of bits of phase data for xilinx dds	
 	CONSTANT C_NR_BIT_DDS_PHASE_XILINX 	  : integer := 32;
 -- Number of command to control the section
